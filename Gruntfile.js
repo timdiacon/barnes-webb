@@ -13,13 +13,18 @@ module.exports = function(grunt) {
 	    },
 
 		// DEV
-		sass: {
+		compass: {
+			dist: {
+				options: {
+					sassDir: 'dev/sass',
+					cssDir: 'dev/css',
+					environment: 'production'
+				}
+			},
 			dev: {
 				options: {
-					style: 'expaned'
-				},
-				files : {
-					'dev/css/style.css':'dev/sass/style.scss'
+					sassDir: 'dev/sass',
+					cssDir: 'dev/css'
 				}
 			}
 		},
@@ -27,7 +32,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files:'dev/sass/*.scss',
-				tasks:'sass'
+				tasks:'compass:dev'
 			}
 		},
 		
@@ -56,7 +61,7 @@ module.exports = function(grunt) {
 	});
 
 	// watch during dev
-	grunt.registerTask('default',['bowerInstall', 'watch:css']);
+	grunt.registerTask('default',['bowerInstall', 'compass:dev', 'watch:css']);
 	// build that shit
 	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin']);
 

@@ -1,4 +1,32 @@
-* {
-	margin: 0;
-	padding: 0;
+@import 'vars.scss';
+@import "compass/css3/background-size";
+
+body {
+	background: $lightGrey;
+	color: $darkGrey;
+}
+
+.container {
+	text-align: center;
+}
+
+/***** HEADER *****/
+
+#intro {
+	background: url('../img/two-gay-chaps.jpg') no-repeat center center;
+	@include background-size(cover);
+	height: 700px;
+
+
+	color: white;
+	padding-top: 350px;
+
+	h1 {
+		font-size: 5em;
+	}
+
+	@media (max-width: 480px) {
+		height: 300px;
+		padding-top: 100px;
+	}
 }

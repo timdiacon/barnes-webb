@@ -7,3 +7,6 @@
 /.tmp/
 
 /build/
+.DS_Store
+
+/dev/.sass-cache/
