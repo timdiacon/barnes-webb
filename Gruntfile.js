@@ -5,6 +5,14 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// INIT
+		bowerInstall: {
+	    	target: {
+	    		src: 'dev/index.html'
+	    	}
+	    },
+
+		// DEV
 		sass: {
 			dev: {
 				options: {
@@ -16,36 +24,41 @@ module.exports = function(grunt) {
 			}
 		},
 
-		bower_concat: {
-			all: {
-				dest:'dev/js/vendor.js'
-			}
-		},
-
 		watch: {
 			css: {
 				files:'dev/sass/*.scss',
 				tasks:'sass'
 			}
 		},
+		
+		// BUILD
+	    useminPrepare: {
+    		html: 'dev/index.html',
+    		options: {
+    			root: 'dev',
+    			dest: 'build'
+    		}
+    	},
+
+    	usemin: {
+    		html: ['build/index.html']
+    	},
+
 
 		copy: {
 			main: {
 				files:[
-					{expand: true, flatten:true, src: ['dev/css/*'], dest: 'build/css/', filter: 'isFile'},
-					{expand: true, flatten:true, src: ['dev/js/*'], dest: 'build/js/', filter: 'isFile'},
 					{expand: true, flatten:true, src: ['dev/index.html'], dest: 'build/', filter: 'isFile'}
 				]
 			}
 		}
 
-
 	});
 
-	// run once to copy vendor js into dev
-	grunt.registerTask('init',['bower_concat']);
-	grunt.registerTask('default',['watch:css']);
+	// watch during dev
+	grunt.registerTask('default',['bowerInstall', 'watch:css']);
+	// build that shit
+	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin']);
 
-	// TODO setup concat & uglify
-	grunt.registerTask('build',['copy:main']);
+	// TODO clean, html-min
 };
