@@ -60,5 +60,5 @@ module.exports = function(grunt) {
 	// build that shit
 	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin']);
 
-	// TODO clean, html-min
+	// TODO clean, html-min, min-versioning
 };
