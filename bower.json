@@ -1,0 +1,21 @@
+{
+  "name": "barneswebb",
+  "version": "0.0.0",
+  "homepage": "https://github.com/timdiacon/barnes-webb",
+  "authors": [
+    "Tim Diacon <timdiacon@gmail.com>"
+  ],
+  "description": "An amazing website about bees!",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.1.1"
+  }
+}
