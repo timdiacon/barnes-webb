@@ -60,41 +60,26 @@ a:focus {
 }
 
 /***** HEADER *****/
-/* line 56, ../sass/style.scss */
-header .navbar {
-  position: absolute;
-  right: 0;
-  left: 0;
+/* line 55, ../sass/style.scss */
+header {
+  position: fixed;
+  top: 0;
+  z-index: -1000;
+  width: 100%;
+}
+/* line 61, ../sass/style.scss */
+header nav {
   margin-top: 20px;
 }
-/* line 63, ../sass/style.scss */
-header .navbar .nav, header .navbar .nav > li {
-  float: none;
-  display: inline-block;
-  *display: inline;
-  /* ie7 fix */
-  *zoom: 1;
-  /* hasLayout ie7 trigger */
-  vertical-align: top;
-}
-/* line 70, ../sass/style.scss */
-header .navbar .nav a, header .navbar .nav > li a {
-  color: white;
-  font-weight: 100;
-}
-/* line 76, ../sass/style.scss */
-header .navbar-inner {
-  text-align: center;
-}
 @media (max-width: 767px) {
-  /* line 82, ../sass/style.scss */
+  /* line 67, ../sass/style.scss */
   header .navbar .nav > li a {
     font-size: 14px;
     padding: 5px;
   }
 }
 
-/* line 89, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 #intro {
   background: url("../img/two-gay-chaps-lg.jpg") no-repeat center center;
   -webkit-background-size: cover;
@@ -104,16 +89,16 @@ header .navbar-inner {
   height: 700px;
   color: white;
 }
-/* line 95, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 #intro .logo {
   margin-top: 375px;
 }
-/* line 98, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 #intro .logo p {
   margin-top: 10px;
 }
 @media (max-width: 767px) {
-  /* line 89, ../sass/style.scss */
+  /* line 74, ../sass/style.scss */
   #intro {
     background: url("../img/two-gay-chaps-lg.jpg") no-repeat center center;
     -webkit-background-size: cover;
@@ -123,69 +108,82 @@ header .navbar-inner {
     height: 400px;
     padding-top: 100px;
   }
-  /* line 109, ../sass/style.scss */
+  /* line 94, ../sass/style.scss */
   #intro .logo {
     margin-top: 125px;
     font-size: 12px;
   }
 }
 
+/* line 101, ../sass/style.scss */
+.block-1 {
+  margin-top: 700px;
+}
+@media (max-width: 767px) {
+  /* line 101, ../sass/style.scss */
+  .block-1 {
+    margin-top: 400px;
+  }
+}
+
 /***** DETAIL BLOCK *****/
-/* line 120, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .detail-block, .detail-block-alt {
+  background: #eae9e4;
   padding: 50px 0 50px 0;
 }
-/* line 123, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 .detail-block h2, .detail-block-alt h2 {
   margin-bottom: 30px;
 }
-/* line 126, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 .detail-block p, .detail-block-alt p {
   line-height: 1.7em;
 }
-/* line 130, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 .detail-block .btn, .detail-block-alt .btn {
   border: none;
   padding: 10px 30px;
   margin: 30px 0;
   color: #5a5a52;
 }
-/* line 137, ../sass/style.scss */
+/* line 129, ../sass/style.scss */
 .detail-block ul, .detail-block-alt ul {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 141, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .detail-block ul li, .detail-block-alt ul li {
   padding: 5px 0;
 }
-/* line 145, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .detail-block ul .list-break, .detail-block-alt ul .list-break {
   color: #d8b218;
 }
 
-/* line 151, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .detail-block-alt {
   background: #5a5a52;
   color: white;
 }
 
 /***** PARALLAX HEXAGONS *****/
-/* line 158, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #about-us {
   position: relative;
+  background: #eae9e4;
 }
-/* line 161, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 #about-us #hex-container {
   width: inherit;
   position: absolute;
   top: 0;
 }
-/* line 166, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 #about-us #hex-container #hexagons {
   position: relative;
 }
-/* line 169, ../sass/style.scss */
+/* line 162, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-1 {
   position: absolute;
   margin-top: 0px;
@@ -195,7 +193,7 @@ header .navbar-inner {
   background: url("../img/hex-1.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 179, ../sass/style.scss */
+/* line 172, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-2 {
   position: absolute;
   margin-top: 100px;
@@ -205,7 +203,7 @@ header .navbar-inner {
   background: url("../img/hex-2.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 189, ../sass/style.scss */
+/* line 182, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-3 {
   position: absolute;
   margin-top: 300px;
@@ -215,7 +213,7 @@ header .navbar-inner {
   background: url("../img/hex-3.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 199, ../sass/style.scss */
+/* line 192, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-4 {
   position: absolute;
   margin-top: 600px;
@@ -226,18 +224,18 @@ header .navbar-inner {
   background-size: 100%;
 }
 @media (max-width: 767px) {
-  /* line 166, ../sass/style.scss */
+  /* line 159, ../sass/style.scss */
   #about-us #hex-container #hexagons {
     display: none;
   }
 }
 
 /***** FEATURE IMAGE *****/
-/* line 218, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 .feature-image {
   height: 300px;
 }
-/* line 221, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 .feature-image#hives {
   background: url("../img/hives-sm-2.jpg") no-repeat;
   -webkit-background-size: cover;
@@ -246,7 +244,7 @@ header .navbar-inner {
   background-size: cover;
 }
 @media (min-width: 768px) {
-  /* line 227, ../sass/style.scss */
+  /* line 220, ../sass/style.scss */
   .feature-image#hives {
     background: url("../img/hives-lg-2.jpg") no-repeat;
     -webkit-background-size: cover;
@@ -257,20 +255,72 @@ header .navbar-inner {
 }
 
 /***** MISC *****/
-/* line 237, ../sass/style.scss */
+/* line 230, ../sass/style.scss */
 .big-gap {
   height: 75px;
 }
 
-/* line 241, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 .contact {
   color: #ffed87;
   text-decoration: underline;
   margin-right: 10px;
 }
 
+/***** MENUS *****/
+/* line 242, ../sass/style.scss */
+.navbar {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+/* line 248, ../sass/style.scss */
+.navbar .nav, .navbar .nav > li {
+  float: none;
+  display: inline-block;
+  *display: inline;
+  /* ie7 fix */
+  *zoom: 1;
+  /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+
+/* line 258, ../sass/style.scss */
+.navbar-inner {
+  text-align: center;
+}
+
+/* line 263, ../sass/style.scss */
+nav a {
+  color: white;
+}
+
+/* line 268, ../sass/style.scss */
+#sticky-menu {
+  width: 100%;
+  height: 50px;
+  background: white;
+  position: fixed;
+  top: -50px;
+}
+/* line 275, ../sass/style.scss */
+#sticky-menu .logo {
+  width: 60px;
+  height: 50px;
+  margin: 0 30px;
+  background: url("../img/barnes-and-webb-logo-sm.png") no-repeat center center;
+  background-size: 100%;
+}
+/* line 283, ../sass/style.scss */
+#sticky-menu a {
+  color: #5a5a52;
+  text-decoration: none;
+  line-height: 30px;
+}
+
 /***** TEMP *****/
-/* line 250, ../sass/style.scss */
+/* line 293, ../sass/style.scss */
 footer {
   height: 200px;
   background: #5a5a52;

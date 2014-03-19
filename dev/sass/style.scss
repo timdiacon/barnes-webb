@@ -53,28 +53,13 @@ a:focus {
 /***** HEADER *****/
 
 header {
-	.navbar {
-		position: absolute;
-		right: 0;
-		left: 0;
+	position: fixed;
+	top: 0;
+	z-index: -1000;
+	width: 100%;
+
+	nav {
 		margin-top: 20px;
-	}
-
-	.navbar .nav, .navbar .nav > li {
-		float:none;
-		display:inline-block;
-		*display:inline; /* ie7 fix */
-		*zoom:1; /* hasLayout ie7 trigger */
-		vertical-align: top;
-
-		a {
-			color: white;
-			font-weight: 100;
-		}
-	}
-
-	.navbar-inner {
-	  text-align:center;
 	}
 
 	// Responsive
@@ -111,13 +96,20 @@ header {
 			font-size: 12px;
 		}
 	}
+}
 
+.block-1 {
+	margin-top: 700px;
 
+	@media (max-width: $screen-xs-max) {
+		margin-top: 400px;
+	}
 }
 
 /***** DETAIL BLOCK *****/
 
 .detail-block, .detail-block-alt {
+	background: $lightGrey;	
 	padding: 50px 0 50px 0;
 
 	h2 {
@@ -157,6 +149,7 @@ header {
 
 #about-us {
 	position: relative;
+	background: $lightGrey;
 	
 	#hex-container {
 		width: inherit;
@@ -242,6 +235,56 @@ header {
 	color: $yellow;
 	text-decoration: underline;
 	margin-right: 10px;
+}
+
+/***** MENUS *****/
+
+.navbar {
+	position: absolute;
+	right: 0;
+	left: 0;
+}
+
+.navbar .nav, .navbar .nav > li {
+	float:none;
+	display:inline-block;
+	*display:inline; /* ie7 fix */
+	*zoom:1; /* hasLayout ie7 trigger */
+	vertical-align: top;
+
+
+}
+
+.navbar-inner {
+  text-align:center;
+}
+
+nav {
+	a {
+		color: white;
+	}
+}
+
+#sticky-menu {
+	width: 100%;
+	height: 50px;
+	background: white;
+	position: fixed;
+	top: -50px;
+
+	.logo {
+		width: 60px;
+		height: 50px;
+		margin: 0 30px;
+		background: url('../img/barnes-and-webb-logo-sm.png') no-repeat center center;
+		background-size: 100%;
+	}
+
+	a {
+		color: $darkGrey;
+		text-decoration: none;
+		line-height: 30px;
+	}
 }
 
 /***** TEMP *****/
