@@ -2,49 +2,276 @@
 body {
   background: #eae9e4;
   color: #5a5a52;
+  font-size: 18px;
+  font-family: "Avenir", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* line 9, ../sass/style.scss */
+/* line 13, ../sass/style.scss */
 .container {
   text-align: center;
 }
 
+/***** TYPOGRAPHY *****/
+/* line 19, ../sass/style.scss */
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+@media (max-width: 767px) {
+  /* line 19, ../sass/style.scss */
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* line 28, ../sass/style.scss */
+a {
+  color: #ffed87;
+  text-decoration: underline;
+}
+/* line 31, ../sass/style.scss */
+a.page-link {
+  color: white;
+}
+
+/* line 36, ../sass/style.scss */
+a:hover,
+a:focus {
+  color: #ffed87;
+  text-decoration: underline;
+}
+/* line 39, ../sass/style.scss */
+a:hover.page-link,
+a:focus.page-link {
+  color: white;
+}
+
+/* line 43, ../sass/style.scss */
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* line 49, ../sass/style.scss */
+.footnote {
+  font-size: 12px;
+}
+
 /***** HEADER *****/
-/* line 15, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
+header .navbar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-top: 20px;
+}
+/* line 63, ../sass/style.scss */
+header .navbar .nav, header .navbar .nav > li {
+  float: none;
+  display: inline-block;
+  *display: inline;
+  /* ie7 fix */
+  *zoom: 1;
+  /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+/* line 70, ../sass/style.scss */
+header .navbar .nav a, header .navbar .nav > li a {
+  color: white;
+  font-weight: 100;
+}
+/* line 76, ../sass/style.scss */
+header .navbar-inner {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  /* line 82, ../sass/style.scss */
+  header .navbar .nav > li a {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+/* line 89, ../sass/style.scss */
 #intro {
-  background: url("../img/two-gay-chaps.jpg") no-repeat center center;
+  background: url("../img/two-gay-chaps-lg.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   height: 700px;
   color: white;
-  padding-top: 350px;
 }
-/* line 24, ../sass/style.scss */
-#intro h1 {
-  font-size: 5em;
+/* line 95, ../sass/style.scss */
+#intro .logo {
+  margin-top: 375px;
 }
-@media (max-width: 480px) {
-  /* line 15, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
+#intro .logo p {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  /* line 89, ../sass/style.scss */
   #intro {
-    height: 300px;
+    background: url("../img/two-gay-chaps-lg.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 400px;
     padding-top: 100px;
+  }
+  /* line 109, ../sass/style.scss */
+  #intro .logo {
+    margin-top: 125px;
+    font-size: 12px;
   }
 }
 
-/***** TESTING *****/
-/* line 36, ../sass/style.scss */
-#feature-1 {
+/***** DETAIL BLOCK *****/
+/* line 120, ../sass/style.scss */
+.detail-block, .detail-block-alt {
+  padding: 50px 0 50px 0;
+}
+/* line 123, ../sass/style.scss */
+.detail-block h2, .detail-block-alt h2 {
+  margin-bottom: 30px;
+}
+/* line 126, ../sass/style.scss */
+.detail-block p, .detail-block-alt p {
+  line-height: 1.7em;
+}
+/* line 130, ../sass/style.scss */
+.detail-block .btn, .detail-block-alt .btn {
+  border: none;
+  padding: 10px 30px;
+  margin: 30px 0;
+  color: #5a5a52;
+}
+/* line 137, ../sass/style.scss */
+.detail-block ul, .detail-block-alt ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* line 141, ../sass/style.scss */
+.detail-block ul li, .detail-block-alt ul li {
+  padding: 5px 0;
+}
+/* line 145, ../sass/style.scss */
+.detail-block ul .list-break, .detail-block-alt ul .list-break {
+  color: #d8b218;
+}
+
+/* line 151, ../sass/style.scss */
+.detail-block-alt {
+  background: #5a5a52;
+  color: white;
+}
+
+/***** PARALLAX HEXAGONS *****/
+/* line 158, ../sass/style.scss */
+#about-us {
+  position: relative;
+}
+/* line 161, ../sass/style.scss */
+#about-us #hex-container {
+  width: inherit;
+  position: absolute;
+  top: 0;
+}
+/* line 166, ../sass/style.scss */
+#about-us #hex-container #hexagons {
+  position: relative;
+}
+/* line 169, ../sass/style.scss */
+#about-us #hex-container #hexagons #hex-1 {
+  position: absolute;
+  margin-top: 0px;
+  left: 10%;
+  width: 150px;
+  height: 150px;
+  background: url("../img/hex-1.png") no-repeat center center;
+  background-size: 100%;
+}
+/* line 179, ../sass/style.scss */
+#about-us #hex-container #hexagons #hex-2 {
+  position: absolute;
+  margin-top: 100px;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+  background: url("../img/hex-2.png") no-repeat center center;
+  background-size: 100%;
+}
+/* line 189, ../sass/style.scss */
+#about-us #hex-container #hexagons #hex-3 {
+  position: absolute;
+  margin-top: 300px;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  background: url("../img/hex-3.png") no-repeat center center;
+  background-size: 100%;
+}
+/* line 199, ../sass/style.scss */
+#about-us #hex-container #hexagons #hex-4 {
+  position: absolute;
+  margin-top: 600px;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  background: url("../img/hex-4.png") no-repeat center center;
+  background-size: 100%;
+}
+@media (max-width: 767px) {
+  /* line 166, ../sass/style.scss */
+  #about-us #hex-container #hexagons {
+    display: none;
+  }
+}
+
+/***** FEATURE IMAGE *****/
+/* line 218, ../sass/style.scss */
+.feature-image {
   height: 300px;
-  background: url("../img/bg-1.jpg") no-repeat;
+}
+/* line 221, ../sass/style.scss */
+.feature-image#hives {
+  background: url("../img/hives-sm-2.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+@media (min-width: 768px) {
+  /* line 227, ../sass/style.scss */
+  .feature-image#hives {
+    background: url("../img/hives-lg-2.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+}
 
-/* line 42, ../sass/style.scss */
+/***** MISC *****/
+/* line 237, ../sass/style.scss */
+.big-gap {
+  height: 75px;
+}
+
+/* line 241, ../sass/style.scss */
+.contact {
+  color: #ffed87;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+/***** TEMP *****/
+/* line 250, ../sass/style.scss */
 footer {
   height: 200px;
+  background: #5a5a52;
 }

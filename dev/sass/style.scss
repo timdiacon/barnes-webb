@@ -4,41 +4,250 @@
 body {
 	background: $lightGrey;
 	color: $darkGrey;
+	font-size: 18px;
+	font-family: "Avenir", Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	//font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 .container {
 	text-align: center;
 }
 
+/***** TYPOGRAPHY *****/
+
+h2 {
+	font-size: 25px;
+	font-weight: 600;
+
+	@media (max-width: $screen-xs-max) {
+		font-size: 20px;
+	}
+}
+
+a {
+  color: $yellow;
+  text-decoration: underline;
+  &.page-link {
+  	color: white;
+  }
+}
+a:hover,
+a:focus {
+  color: $yellow;
+  text-decoration: underline;
+  &.page-link {
+  	color: white;
+  }
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.footnote {
+	font-size: 12px;
+}
+
 /***** HEADER *****/
 
+header {
+	.navbar {
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin-top: 20px;
+	}
+
+	.navbar .nav, .navbar .nav > li {
+		float:none;
+		display:inline-block;
+		*display:inline; /* ie7 fix */
+		*zoom:1; /* hasLayout ie7 trigger */
+		vertical-align: top;
+
+		a {
+			color: white;
+			font-weight: 100;
+		}
+	}
+
+	.navbar-inner {
+	  text-align:center;
+	}
+
+	// Responsive
+	@media (max-width: $screen-xs-max) {
+		.navbar .nav > li a {
+			font-size: 14px;
+			padding: 5px;
+		}
+	}
+}
+
 #intro {
-	background: url('../img/two-gay-chaps.jpg') no-repeat center center;
+	background: url('../img/two-gay-chaps-lg.jpg') no-repeat center center;
 	@include background-size(cover);
 	height: 700px;
-
-
 	color: white;
-	padding-top: 350px;
 
-	h1 {
-		font-size: 5em;
+	.logo {
+		margin-top: 375px;
+
+		p {
+			margin-top: 10px;
+		}
 	}
 
-	@media (max-width: 480px) {
-		height: 300px;
+	@media (max-width: $screen-xs-max) {
+		background: url('../img/two-gay-chaps-lg.jpg') no-repeat center center;
+		@include background-size(cover);
+		height: 400px;
 		padding-top: 100px;
+
+		.logo {
+			margin-top: 125px;
+			font-size: 12px;
+		}
+	}
+
+
+}
+
+/***** DETAIL BLOCK *****/
+
+.detail-block, .detail-block-alt {
+	padding: 50px 0 50px 0;
+
+	h2 {
+		margin-bottom: 30px;
+	}
+	p {
+		line-height: 1.7em;
+	}
+
+	.btn {
+		border: none;
+		padding: 10px 30px;
+		margin: 30px 0;
+		color: $darkGrey;
+	}
+
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		
+		li {
+			padding: 5px 0;
+
+		}
+		.list-break {
+			color: $mustard;
+		}
 	}
 }
 
-/***** TESTING *****/
-
-#feature-1 {
-	height: 300px;
-	background: url('../img/bg-1.jpg') no-repeat;
-	@include background-size(cover);
+.detail-block-alt {
+	background: $darkGrey;
+	color: white;
 }
+
+/***** PARALLAX HEXAGONS *****/
+
+#about-us {
+	position: relative;
+	
+	#hex-container {
+		width: inherit;
+		position: absolute;
+		top: 0;
+	
+		#hexagons {
+			position: relative;
+			
+			#hex-1 {
+				position: absolute;
+				margin-top: 0px;
+				left: 10%;
+				width: 150px;
+				height: 150px;
+				background: url('../img/hex-1.png') no-repeat center center;
+				background-size: 100%;
+			}
+
+			#hex-2 {
+				position: absolute;
+				margin-top: 100px;
+				right: 10%;
+				width: 200px;
+				height: 200px;
+				background: url('../img/hex-2.png') no-repeat center center;
+				background-size: 100%;
+			}
+
+			#hex-3 {
+				position: absolute;
+				margin-top: 300px;
+				left: 5%;
+				width: 200px;
+				height: 200px;
+				background: url('../img/hex-3.png') no-repeat center center;
+				background-size: 100%;
+			}
+
+			#hex-4 {
+				position: absolute;
+				margin-top: 600px;
+				right: 15%;
+				width: 150px;
+				height: 150px;
+				background: url('../img/hex-4.png') no-repeat center center;
+				background-size: 100%;
+			}
+
+			@media (max-width: $screen-xs-max) {
+				display: none;
+			}
+		}
+	}
+}
+
+/***** FEATURE IMAGE *****/
+
+.feature-image {
+	height: 300px;
+	
+	&#hives {
+		background: url('../img/hives-sm-2.jpg') no-repeat;
+		@include background-size(cover);
+	}
+
+	@media (min-width: $screen-sm-min) {
+		&#hives {
+			background: url('../img/hives-lg-2.jpg') no-repeat;
+			@include background-size(cover);
+
+		}		
+	}
+}
+
+/***** MISC *****/
+
+.big-gap {
+	height: 75px;
+}
+
+.contact {
+	color: $yellow;
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+/***** TEMP *****/
+
 
 footer {
 	height: 200px;
+	background: $darkGrey;
 }
