@@ -49,6 +49,28 @@ module.exports = function(grunt) {
     		html: ['build/index.html']
     	},
 
+    	imagemin: {
+    		build: {
+    			files: [{
+    				expand: true,
+    				cwd: 'dev/img',
+    				src: ['**/*.{png,jpg,gif}'],
+    				dest: 'build/img'
+    			}]
+    		}
+    	},
+
+    	htmlmin: {
+    		dist: {
+    			options: {
+    				removeComments: true,
+    				collapseWhitespace: true
+    			},
+    			files: {
+    				'build/index.html': 'build/index.html'
+    			}
+    		},
+    	},
 
 		copy: {
 			main: {
@@ -63,7 +85,7 @@ module.exports = function(grunt) {
 	// watch during dev
 	grunt.registerTask('default',['bowerInstall', 'compass:dev', 'watch:css']);
 	// build that shit
-	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin']);
+	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin', 'htmlmin']);
 
-	// TODO clean, html-min, min-versioning
+	// TODO clean, min-versioning, FIX image-min?
 };

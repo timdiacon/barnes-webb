@@ -26,60 +26,65 @@ h2 {
 }
 
 /* line 28, ../sass/style.scss */
+p {
+  margin-bottom: 30px;
+}
+
+/* line 32, ../sass/style.scss */
 a {
   color: #ffed87;
   text-decoration: underline;
 }
-/* line 31, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 a.page-link {
   color: white;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 40, ../sass/style.scss */
 a:hover,
 a:focus {
   color: #ffed87;
   text-decoration: underline;
 }
-/* line 39, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 a:hover.page-link,
 a:focus.page-link {
   color: white;
 }
 
-/* line 43, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .footnote {
   font-size: 12px;
 }
 
+/* line 57, ../sass/style.scss */
+blockquote {
+  font-size: 30px;
+  font-style: italic;
+  border: none;
+}
+
 /***** HEADER *****/
-/* line 55, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 header {
   position: fixed;
   top: 0;
   z-index: -1000;
   width: 100%;
 }
-/* line 61, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 header nav {
   margin-top: 20px;
 }
-@media (max-width: 767px) {
-  /* line 67, ../sass/style.scss */
-  header .navbar .nav > li a {
-    font-size: 14px;
-    padding: 5px;
-  }
-}
 
-/* line 74, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 #intro {
   background: url("../img/two-gay-chaps-lg.jpg") no-repeat center center;
   -webkit-background-size: cover;
@@ -89,16 +94,16 @@ header nav {
   height: 700px;
   color: white;
 }
-/* line 80, ../sass/style.scss */
-#intro .logo {
-  margin-top: 375px;
+/* line 82, ../sass/style.scss */
+#intro .container {
+  padding-top: 375px;
 }
-/* line 83, ../sass/style.scss */
-#intro .logo p {
+/* line 85, ../sass/style.scss */
+#intro .container .logo p {
   margin-top: 10px;
 }
 @media (max-width: 767px) {
-  /* line 74, ../sass/style.scss */
+  /* line 76, ../sass/style.scss */
   #intro {
     background: url("../img/two-gay-chaps-lg.jpg") no-repeat center center;
     -webkit-background-size: cover;
@@ -108,82 +113,85 @@ header nav {
     height: 400px;
     padding-top: 100px;
   }
-  /* line 94, ../sass/style.scss */
-  #intro .logo {
-    margin-top: 125px;
+  /* line 97, ../sass/style.scss */
+  #intro .container {
+    padding-top: 125px;
+  }
+  /* line 99, ../sass/style.scss */
+  #intro .container .logo {
     font-size: 12px;
   }
 }
 
-/* line 101, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 .block-1 {
   margin-top: 700px;
 }
 @media (max-width: 767px) {
-  /* line 101, ../sass/style.scss */
+  /* line 107, ../sass/style.scss */
   .block-1 {
     margin-top: 400px;
   }
 }
 
 /***** DETAIL BLOCK *****/
-/* line 111, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 .detail-block, .detail-block-alt {
   background: #eae9e4;
   padding: 50px 0 50px 0;
 }
-/* line 115, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 .detail-block h2, .detail-block-alt h2 {
   margin-bottom: 30px;
 }
-/* line 118, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .detail-block p, .detail-block-alt p {
   line-height: 1.7em;
 }
-/* line 122, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 .detail-block .btn, .detail-block-alt .btn {
   border: none;
   padding: 10px 30px;
   margin: 30px 0;
   color: #5a5a52;
 }
-/* line 129, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .detail-block ul, .detail-block-alt ul {
   list-style-type: none;
   padding-left: 0;
 }
-/* line 133, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .detail-block ul li, .detail-block-alt ul li {
   padding: 5px 0;
 }
-/* line 137, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 .detail-block ul .list-break, .detail-block-alt ul .list-break {
   color: #d8b218;
 }
 
-/* line 143, ../sass/style.scss */
+/* line 149, ../sass/style.scss */
 .detail-block-alt {
   background: #5a5a52;
   color: white;
 }
 
 /***** PARALLAX HEXAGONS *****/
-/* line 150, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 #about-us {
   position: relative;
   background: #eae9e4;
 }
-/* line 154, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 #about-us #hex-container {
   width: inherit;
   position: absolute;
   top: 0;
 }
-/* line 159, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 #about-us #hex-container #hexagons {
   position: relative;
 }
-/* line 162, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-1 {
   position: absolute;
   margin-top: 0px;
@@ -193,7 +201,7 @@ header nav {
   background: url("../img/hex-1.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 172, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-2 {
   position: absolute;
   margin-top: 100px;
@@ -203,7 +211,7 @@ header nav {
   background: url("../img/hex-2.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 182, ../sass/style.scss */
+/* line 188, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-3 {
   position: absolute;
   margin-top: 300px;
@@ -213,7 +221,7 @@ header nav {
   background: url("../img/hex-3.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 192, ../sass/style.scss */
+/* line 198, ../sass/style.scss */
 #about-us #hex-container #hexagons #hex-4 {
   position: absolute;
   margin-top: 600px;
@@ -224,29 +232,61 @@ header nav {
   background-size: 100%;
 }
 @media (max-width: 767px) {
-  /* line 159, ../sass/style.scss */
+  /* line 165, ../sass/style.scss */
   #about-us #hex-container #hexagons {
     display: none;
   }
 }
 
 /***** FEATURE IMAGE *****/
-/* line 211, ../sass/style.scss */
+/* line 217, ../sass/style.scss */
 .feature-image {
   height: 300px;
 }
-/* line 214, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 .feature-image#hives {
-  background: url("../img/hives-sm-2.jpg") no-repeat;
+  background: url("../img/hives-sm.jpg") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* line 224, ../sass/style.scss */
+.feature-image#bee-finger {
+  background: url("../img/bee-finger-sm.jpg") no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* line 228, ../sass/style.scss */
+.feature-image#men-at-work {
+  background: url("../img/men-at-work-sm.jpg") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 @media (min-width: 768px) {
-  /* line 220, ../sass/style.scss */
+  /* line 234, ../sass/style.scss */
   .feature-image#hives {
-    background: url("../img/hives-lg-2.jpg") no-repeat;
+    background: url("../img/hives-lg.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  /* line 238, ../sass/style.scss */
+  .feature-image#bee-finger {
+    background: url("../img/bee-finger-lg.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  /* line 242, ../sass/style.scss */
+  .feature-image#men-at-work {
+    background: url("../img/men-at-work-lg.jpg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -254,28 +294,46 @@ header nav {
   }
 }
 
+/***** HAPPY CUSTOMERS *****/
+/* line 252, ../sass/style.scss */
+#customer-pic-1 img {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
 /***** MISC *****/
-/* line 230, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 .big-gap {
   height: 75px;
 }
 
-/* line 234, ../sass/style.scss */
+/* line 264, ../sass/style.scss */
 .contact {
   color: #ffed87;
   text-decoration: underline;
   margin-right: 10px;
 }
 
+/* line 270, ../sass/style.scss */
+.btn-default:hover {
+  background: #ffed87;
+}
+
+/* line 274, ../sass/style.scss */
+#about-us {
+  background: white;
+}
+
 /***** MENUS *****/
-/* line 242, ../sass/style.scss */
+/* line 280, ../sass/style.scss */
 .navbar {
   position: absolute;
   right: 0;
   left: 0;
+  font-size: 16px;
 }
 
-/* line 248, ../sass/style.scss */
+/* line 287, ../sass/style.scss */
 .navbar .nav, .navbar .nav > li {
   float: none;
   display: inline-block;
@@ -286,17 +344,23 @@ header nav {
   vertical-align: top;
 }
 
-/* line 258, ../sass/style.scss */
+/* line 295, ../sass/style.scss */
+.nav > li a:hover, .nav > li a:focus {
+  background: none;
+  text-decoration: underline;
+}
+
+/* line 300, ../sass/style.scss */
 .navbar-inner {
   text-align: center;
 }
 
-/* line 263, ../sass/style.scss */
+/* line 305, ../sass/style.scss */
 nav a {
   color: white;
 }
 
-/* line 268, ../sass/style.scss */
+/* line 310, ../sass/style.scss */
 #sticky-menu {
   width: 100%;
   height: 50px;
@@ -304,7 +368,7 @@ nav a {
   position: fixed;
   top: -50px;
 }
-/* line 275, ../sass/style.scss */
+/* line 317, ../sass/style.scss */
 #sticky-menu .logo {
   width: 60px;
   height: 50px;
@@ -312,16 +376,72 @@ nav a {
   background: url("../img/barnes-and-webb-logo-sm.png") no-repeat center center;
   background-size: 100%;
 }
-/* line 283, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 #sticky-menu a {
   color: #5a5a52;
   text-decoration: none;
   line-height: 30px;
 }
+/* line 330, ../sass/style.scss */
+#sticky-menu a:hover, #sticky-menu a:focus {
+  color: #d8b218;
+}
+
+@media (max-width: 767px) {
+  /* line 337, ../sass/style.scss */
+  .navbar .nav > li a {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  /* line 342, ../sass/style.scss */
+  #sticky-menu .logo {
+    display: none;
+  }
+  /* line 345, ../sass/style.scss */
+  #sticky-menu a {
+    padding-top: 15px;
+  }
+}
+/***** EMAIL SIGN-UP *****/
+/* line 354, ../sass/style.scss */
+#email-signup form {
+  margin-bottom: 15px;
+}
+/* line 355, ../sass/style.scss */
+#email-signup form input {
+  border: none;
+  padding: 10px 15px;
+  width: 80%;
+}
+/* line 360, ../sass/style.scss */
+#email-signup form #submit {
+  display: inline-block;
+  width: 20%;
+  padding: 10px 15px;
+  background: #d8b218;
+  text-decoration: none;
+}
+/* line 369, ../sass/style.scss */
+#email-signup .invalid {
+  display: none;
+  padding: 15px 0 5px 0;
+  color: #e74c3c;
+}
 
 /***** TEMP *****/
-/* line 293, ../sass/style.scss */
+/* line 379, ../sass/style.scss */
 footer {
   height: 200px;
   background: #5a5a52;
+  text-align: center;
+  padding-top: 50px;
+}
+/* line 385, ../sass/style.scss */
+footer .contact {
+  margin: 25px 0;
+}
+/* line 389, ../sass/style.scss */
+footer .footnote {
+  color: white;
 }

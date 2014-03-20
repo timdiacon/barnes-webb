@@ -1,5 +1,5 @@
-var stickyThreshold = 700;
 var stickyOpen = false;
+stickyThreshold = parseInt($('#intro').css('height'), 10);
 
 $(document).ready(function(){
 	console.log("Release The Bees!");
@@ -23,6 +23,11 @@ $(document).ready(function(){
 			stickyOpen = false;
 		}
 	});
+
+	// update any variables on window resize
+	$(window).resize(function(){
+		stickyThreshold = parseInt($('#intro').css('height'), 10);
+	});
 });
 
 function showSticky(){
@@ -31,4 +36,9 @@ function showSticky(){
 
 function hideSticky(){
 	$('#sticky-menu').animate({top:-50}, 200);
+}
+
+function validate(email){
+	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(email);
 }

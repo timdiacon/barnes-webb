@@ -25,6 +25,10 @@ h2 {
 	}
 }
 
+p {
+	margin-bottom: 30px;
+}
+
 a {
   color: $yellow;
   text-decoration: underline;
@@ -50,6 +54,12 @@ a:focus {
 	font-size: 12px;
 }
 
+blockquote {
+	font-size: 30px;
+	font-style: italic;
+	border: none;
+}
+
 /***** HEADER *****/
 
 header {
@@ -61,14 +71,6 @@ header {
 	nav {
 		margin-top: 20px;
 	}
-
-	// Responsive
-	@media (max-width: $screen-xs-max) {
-		.navbar .nav > li a {
-			font-size: 14px;
-			padding: 5px;
-		}
-	}
 }
 
 #intro {
@@ -77,11 +79,12 @@ header {
 	height: 700px;
 	color: white;
 
-	.logo {
-		margin-top: 375px;
-
-		p {
-			margin-top: 10px;
+	.container {
+		padding-top: 375px;
+		.logo {
+			p {
+				margin-top: 10px;
+			}
 		}
 	}
 
@@ -91,10 +94,13 @@ header {
 		height: 400px;
 		padding-top: 100px;
 
-		.logo {
-			margin-top: 125px;
-			font-size: 12px;
+		.container {
+			padding-top: 125px;
+			.logo {
+				font-size: 12px;
+			}
 		}
+
 	}
 }
 
@@ -212,16 +218,40 @@ header {
 	height: 300px;
 	
 	&#hives {
-		background: url('../img/hives-sm-2.jpg') no-repeat;
+		background: url('../img/hives-sm.jpg') no-repeat;
+		@include background-size(cover);
+	}
+	&#bee-finger {
+		background: url('../img/bee-finger-sm.jpg') no-repeat;
+		@include background-size(cover);
+	}
+	&#men-at-work {
+		background: url('../img/men-at-work-sm.jpg') no-repeat;
 		@include background-size(cover);
 	}
 
 	@media (min-width: $screen-sm-min) {
 		&#hives {
-			background: url('../img/hives-lg-2.jpg') no-repeat;
+			background: url('../img/hives-lg.jpg') no-repeat;
 			@include background-size(cover);
+		}
+		&#bee-finger {
+			background: url('../img/bee-finger-lg.jpg') no-repeat;
+			@include background-size(cover);
+		}
+		&#men-at-work {
+			background: url('../img/men-at-work-lg.jpg') no-repeat;
+			@include background-size(cover);
+		}
+	}
+}
 
-		}		
+/***** HAPPY CUSTOMERS *****/
+
+#customer-pic-1 {
+	img {
+		width: 100%;
+		margin-bottom: 50px;
 	}
 }
 
@@ -237,12 +267,21 @@ header {
 	margin-right: 10px;
 }
 
+.btn-default:hover {
+	background: $yellow;
+}
+
+#about-us {
+	background: white;
+}
+
 /***** MENUS *****/
 
 .navbar {
 	position: absolute;
 	right: 0;
 	left: 0;
+	font-size: 16px;
 }
 
 .navbar .nav, .navbar .nav > li {
@@ -251,8 +290,11 @@ header {
 	*display:inline; /* ie7 fix */
 	*zoom:1; /* hasLayout ie7 trigger */
 	vertical-align: top;
+}
 
-
+.nav > li a:hover, .nav > li a:focus {
+	background: none;
+	text-decoration: underline;
 }
 
 .navbar-inner {
@@ -285,6 +327,50 @@ nav {
 		text-decoration: none;
 		line-height: 30px;
 	}
+	a:hover, a:focus {
+		color: $mustard;
+	}
+}
+
+// Responsive
+@media (max-width: $screen-xs-max) {
+	.navbar .nav > li a {
+		font-size: 14px;
+		padding: 5px;
+	}
+	#sticky-menu {
+		.logo {
+			display: none;
+		}
+		a {
+			padding-top: 15px;
+		}
+	}
+}
+
+/***** EMAIL SIGN-UP *****/
+
+#email-signup {
+	form {
+		input {
+			border: none;
+			padding: 10px 15px;
+			width: 80%;
+		}
+		#submit {
+			display: inline-block;
+			width: 20%;
+			padding: 10px 15px;
+			background: $mustard;
+			text-decoration: none;
+		}
+		margin-bottom: 15px;
+	}
+	.invalid {
+		display: none;
+		padding: 15px 0 5px 0;
+		color: $red;
+	}
 }
 
 /***** TEMP *****/
@@ -293,4 +379,14 @@ nav {
 footer {
 	height: 200px;
 	background: $darkGrey;
+	text-align: center;
+	padding-top: 50px;
+	
+	.contact {
+		margin: 25px 0;
+	}
+
+	.footnote {
+		color: white;
+	}
 }
