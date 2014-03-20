@@ -28,6 +28,12 @@ $(document).ready(function(){
 	$(window).resize(function(){
 		stickyThreshold = parseInt($('#intro').css('height'), 10);
 	});
+
+	$('.navbar li').click(function(){
+		var id = $(this).attr('class');
+		onMenu(id);
+		return false;
+	});
 });
 
 function showSticky(){
@@ -41,4 +47,18 @@ function hideSticky(){
 function validate(email){
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
+}
+
+function onMenu(section){
+	switch(section){
+		case 'rent':
+			$('html, body').animate({scrollTop: $("#rent").offset().top}, 500);
+			break;
+		case 'adopt':
+			$('html, body').animate({scrollTop: $("#adopt").offset().top}, 500);
+			break;
+		case 'about':
+			$('html, body').animate({scrollTop: $("#about-us").offset().top}, 500);
+			break;
+	}
 }
