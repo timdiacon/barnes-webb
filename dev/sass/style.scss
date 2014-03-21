@@ -1,4 +1,5 @@
 @import 'vars.scss';
+@import "compass/css3/user-interface";
 @import "compass/css3/background-size";
 
 body {
@@ -58,6 +59,10 @@ blockquote {
 	font-size: 30px;
 	font-style: italic;
 	border: none;
+}
+
+label {
+	margin-bottom: 0;
 }
 
 /***** HEADER *****/
@@ -306,6 +311,20 @@ header {
 	background: white;
 }
 
+.box-btn {
+	padding: 10px 20px;
+	margin: 10px 0;
+	border: solid 1px $darkGrey;
+	cursor: pointer;
+	display: inline-block;
+}
+
+
+hr {
+	border-top: solid 1px $darkGrey;
+}
+
+
 /***** MENUS *****/
 
 .navbar {
@@ -412,9 +431,6 @@ nav {
 	padding-bottom: 80px;
 }
 
-/***** TEMP *****/
-
-
 footer {
 	height: 200px;
 	background: $darkGrey;
@@ -429,3 +445,115 @@ footer {
 		color: white;
 	}
 }
+
+/***** SHOP *****/
+
+#basket-container {
+	position: fixed;
+	z-index: 1000;
+	top: 50px;
+	width: 100%;
+	text-align: center;
+	background: $lightGrey;
+	
+	#sticky-basket {
+		padding: 10px 0;
+		margin: 50px 0;
+		border: solid 1px $darkGrey;
+		cursor: pointer;
+
+		label {
+			cursor: pointer;
+			@include user-select(none);
+			font-weight: 400;
+		}
+	}
+}
+
+#shop {
+	display: none;
+	background: $lightGrey;
+	margin-top: 200px;
+
+	.row .intro {
+		margin-bottom: 100px;
+	}
+
+	.simpleCart_shelfItem {
+		padding: 0;
+		margin-bottom: 50px;
+
+		a {
+			color: $darkGrey;
+			text-decoration: none;
+			
+			.item_name {
+
+			}
+			.add-to-basket{
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 30px;
+			}
+		}
+
+		.header {
+			img {
+				width: 100%;
+			}
+		}
+		.details {
+			padding: 20px 0;
+			background: $yellow;
+			text-align: center;
+
+		}
+	}
+}
+
+/***** BASKET *****/
+
+#basket {
+
+	position: absolute;
+	top: 200px;
+	z-index: 2000;
+	background: $lightGrey;
+	display: none;
+
+	.itemRow {
+		text-align: left;
+		img {
+			width: 100%;
+		}
+		.item-quantity {
+			input {
+				width: 100%;
+				text-align: center;
+				border: solid 1px $darkGrey;
+				background: $lightGrey;
+				padding: 15px;
+			}
+		}
+	}
+
+	.summary {
+		.left {
+			text-align: left;
+		}
+		.right {
+			text-align: right;
+		}
+		.total {
+			font-weight: 600;
+		}
+	}
+
+	#checkout {
+		span {
+			background: $yellow;
+			color: $darkGrey;
+		}
+	}
+}
+

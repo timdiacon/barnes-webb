@@ -17,6 +17,7 @@
   "dependencies": {
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.1",
-    "skrollr": "~0.6.21"
+    "skrollr": "~0.6.21",
+    "simplecart-js": "*"
   }
 }
