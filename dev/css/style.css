@@ -544,49 +544,55 @@ footer .footnote {
 }
 /* line 482, ../sass/style.scss */
 #shop .simpleCart_shelfItem {
-  padding: 0;
   margin-bottom: 50px;
 }
-/* line 486, ../sass/style.scss */
+/* line 485, ../sass/style.scss */
 #shop .simpleCart_shelfItem a {
   color: #5a5a52;
   text-decoration: none;
 }
-/* line 493, ../sass/style.scss */
+/* line 492, ../sass/style.scss */
 #shop .simpleCart_shelfItem a .add-to-basket {
   font-weight: 600;
   font-size: 16px;
   line-height: 30px;
 }
-/* line 501, ../sass/style.scss */
+/* line 500, ../sass/style.scss */
 #shop .simpleCart_shelfItem .header img {
   width: 100%;
 }
-/* line 505, ../sass/style.scss */
+/* line 504, ../sass/style.scss */
 #shop .simpleCart_shelfItem .details {
   padding: 20px 0;
   background: #ffed87;
   text-align: center;
 }
+@media (max-width: 767px) {
+  /* line 513, ../sass/style.scss */
+  #shop .row .intro {
+    display: none;
+  }
+}
 
 /***** BASKET *****/
-/* line 516, ../sass/style.scss */
+/* line 521, ../sass/style.scss */
 #basket {
   position: absolute;
-  top: 200px;
+  top: 120px;
   z-index: 2000;
+  width: 100%;
   background: #eae9e4;
   display: none;
 }
-/* line 524, ../sass/style.scss */
+/* line 529, ../sass/style.scss */
 #basket .itemRow {
   text-align: left;
 }
-/* line 526, ../sass/style.scss */
+/* line 531, ../sass/style.scss */
 #basket .itemRow img {
   width: 100%;
 }
-/* line 530, ../sass/style.scss */
+/* line 535, ../sass/style.scss */
 #basket .itemRow .item-quantity input {
   width: 100%;
   text-align: center;
@@ -594,20 +600,28 @@ footer .footnote {
   background: #eae9e4;
   padding: 15px;
 }
-/* line 541, ../sass/style.scss */
+/* line 543, ../sass/style.scss */
+#basket .itemRow .item-total {
+  text-align: right;
+}
+/* line 549, ../sass/style.scss */
 #basket .summary .left {
   text-align: left;
 }
-/* line 544, ../sass/style.scss */
+/* line 552, ../sass/style.scss */
 #basket .summary .right {
   text-align: right;
 }
-/* line 547, ../sass/style.scss */
+/* line 555, ../sass/style.scss */
 #basket .summary .total {
   font-weight: 600;
 }
-/* line 553, ../sass/style.scss */
+/* line 561, ../sass/style.scss */
 #basket #checkout span {
   background: #ffed87;
+}
+/* line 563, ../sass/style.scss */
+#basket #checkout span a {
   color: #5a5a52;
+  text-decoration: none;
 }

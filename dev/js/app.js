@@ -1,6 +1,7 @@
 var stickyOpen = false;
 var stickyMenuHeight = 50;
 var isShop = false;
+var scrollDuration = 500;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
 
 $(document).ready(function(){
@@ -34,21 +35,22 @@ $(document).ready(function(){
 				html += '<div class="col-sm-2 col-sm-offset-2"><img src="' + item.get('thumb') + '"></div>';
 				html += '<div class="col-sm-4">' + item.get('name') + '<br>' + simpleCart.toCurrency(item.price()) + '</div>';
 				html += '<div class="item-quantity col-sm-1"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div>';
-				html += '<div class="col-sm-3">' + simpleCart.toCurrency(item.total()) + '</div>';
+				html += '<div class="item-total col-sm-1">' + simpleCart.toCurrency(item.total()) + '</div>';
 				html += '</div>';
 				return html;
 			}}
 		]
 	});
 
-	//displayShop();
+	displayShop();
+	displayBasket();
 
 });
 
 function setupMainListeners(){
 	$('.navbar li').click(function(){
 		var id = $(this).attr('class');
-		onMenu(id);
+		onMenu(id, (isShop) ? 0 : scrollDuration);
 		return false;
 	});
 
@@ -97,20 +99,20 @@ function validate(email){
 	return re.test(email);
 }
 
-function onMenu(section){
+function onMenu(section, duration){
 	// TODO would be better to jump to scroll pos if shop rather than animate
 	switch(section){
 		case 'rent':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#rent").offset().top}, 500);
+			$('html, body').animate({scrollTop: $("#rent").offset().top}, duration);
 			break;
 		case 'adopt':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#adopt").offset().top}, 500);
+			$('html, body').animate({scrollTop: $("#adopt").offset().top}, duration);
 			break;
 		case 'about':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#about-us").offset().top}, 500);
+			$('html, body').animate({scrollTop: $("#about-us").offset().top}, duration);
 			break;
 		case 'shop':
 			if(!isShop)displayShop();
@@ -142,10 +144,10 @@ function hideShop(){
 
 function displayBasket(){
 	$('#basket').css('display', 'block');
-	$('#products').css('display', 'none');	
+	$('#products, #basket-container').css('display', 'none');	
 }
 
 function hideBasket(){
 	$('#basket').css('display', 'none');
-	$('#products').css('display', 'block');
+	$('#products, #basket-container').css('display', 'block');
 }
