@@ -42,8 +42,8 @@ $(document).ready(function(){
 		]
 	});
 
-	displayShop();
-	displayBasket();
+	//displayShop();
+	//displayBasket();
 
 });
 
@@ -71,10 +71,19 @@ function setupMainListeners(){
 	$('#continue-shopping').click(function(){
 		hideBasket();
 	});
+
+	$('#find-out-more-btn').click(function(){
+		onMenu('rent', scrollDuration);
+	});
+
+	simpleCart.bind( 'afterAdd' , function( item ){
+		// make something happen when you add item to basket!
+	});
+
 }
 
 function updateSticky(){
-	if(isShop && stickyOpen == false){
+	if(isShop){
 		stickyOpen = true;
 		showSticky();
 	} else if($(window).scrollTop() >= stickyThreshold && stickyOpen == false){
@@ -87,11 +96,11 @@ function updateSticky(){
 }
 
 function showSticky(){
-	$('#sticky-menu').animate({top:0}, 200);
+	$('#sticky-menu').addClass('visible');
 }
 
 function hideSticky(){
-	$('#sticky-menu').animate({top:-50}, 200);
+	$('#sticky-menu').removeClass('visible');
 }
 
 function validate(email){
@@ -121,25 +130,24 @@ function onMenu(section, duration){
 }
 
 function displayShop(){
-	// TODO do this via CSS
-	$('#shop .container').css({'opacity':0});
-	$('#shop .container').animate({'opacity':1}, 250);
+	$('#shop').removeClass('hidden');
+	$('#shop').addClass('visible');
+	$('#main').removeClass('visible');
+	$('#main').addClass('hidden');
 
 	isShop = true;
 	updateSticky();
-	$('#main').css('display', 'none');
-	$('#shop').css('display', 'block');
+	$('html, body').scrollTop(0);
 }
 
 function hideShop(){
-	// TODO do this via CSS
-	$('#main').css({'opacity':0});
-	$('#main').animate({'opacity':1}, 250);
+	$('#shop').addClass('hidden');
+	$('#shop').removeClass('visible');
+	$('#main').removeClass('hidden');
+	$('#main').addClass('visible');
 
 	isShop = false;
 	updateSticky();
-	$('#main').css('display', 'block');
-	$('#shop').css('display', 'none');
 }
 
 function displayBasket(){

@@ -1,0 +1,20 @@
+BeeTasks:
+  ✔ convert jquery animations to css @done (14-03-25 16:17)
+  ☐ adoption expand in place details
+  ☐ adoption add to basket action
+  ☐ add empty basket button
+  ☐ add social links
+  ☐ faq
+  ☐ crazy hexagon rollover shit
+  ☐ finish styling of basket
+  ☐ make basket more mobile friendly
+  ☐ add in rollover animations
+  ☐ add to basket animation
+  ☐ get favicon
+  ☐ fix up email sign up
+  ☐ add analytics code
+  ☐ get ftp details
+
+Bee MaybeTasks:
+  ☐ add in routing
+  ☐ basic stock management via json (instock / out of stock)

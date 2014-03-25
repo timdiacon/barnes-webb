@@ -18,13 +18,15 @@ module.exports = function(grunt) {
 				options: {
 					sassDir: 'dev/sass',
 					cssDir: 'dev/css',
-					environment: 'production'
+					environment: 'production',
+					require: ['animation']
 				}
 			},
 			dev: {
 				options: {
 					sassDir: 'dev/sass',
-					cssDir: 'dev/css'
+					cssDir: 'dev/css',
+					require: ['animation']
 				}
 			}
 		},

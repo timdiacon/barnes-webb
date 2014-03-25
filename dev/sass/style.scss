@@ -1,6 +1,9 @@
 @import 'vars.scss';
 @import "compass/css3/user-interface";
 @import "compass/css3/background-size";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "animation";
 
 body {
 	background: $lightGrey;
@@ -13,6 +16,16 @@ body {
 
 .container {
 	text-align: center;
+}
+
+#main {
+	&.hidden {
+		display: none;
+	}
+	&.visible {
+		display: block;
+		@include animation(alpha-in .25s null null null forwards);
+	}
 }
 
 /***** TYPOGRAPHY *****/
@@ -109,11 +122,13 @@ header {
 	}
 }
 
-.block-1 {
-	margin-top: 700px;
+.arrow-mask {
+	background: url('../img/arrow-mask.png') no-repeat center center;
+	height: 30px;
+	margin-top: 670px;
 
 	@media (max-width: $screen-xs-max) {
-		margin-top: 400px;
+		margin-top: 370px;
 	}
 }
 
@@ -309,6 +324,9 @@ header {
 
 #about-us {
 	background: white;
+	a {
+		color: $darkGrey;
+	}
 }
 
 .box-btn {
@@ -332,6 +350,7 @@ hr {
 	right: 0;
 	left: 0;
 	font-size: 16px;
+	border: none;
 }
 
 .navbar .nav, .navbar .nav > li {
@@ -344,7 +363,6 @@ hr {
 
 .nav > li a:hover, .nav > li a:focus {
 	background: none;
-	text-decoration: underline;
 }
 
 .navbar-inner {
@@ -354,6 +372,7 @@ hr {
 nav {
 	a {
 		color: white;
+		text-decoration: none;
 	}
 }
 
@@ -362,7 +381,13 @@ nav {
 	height: 50px;
 	background: white;
 	position: fixed;
-	top: -50px;
+	top: 0;
+
+	@include transition(top, 0.2s);
+	@include translate(0,-50px);
+	&.visible {
+		@include translate(0,0px);
+	}
 
 	.logo {
 		width: 60px;
@@ -454,7 +479,7 @@ footer {
 	top: 50px;
 	width: 100%;
 	text-align: center;
-	background: $lightGrey;
+	background: white;
 	
 	#sticky-basket {
 		padding: 10px 0;
@@ -475,14 +500,20 @@ footer {
 	background: $lightGrey;
 	margin-top: 200px;
 
+	&.visible {
+		display: block;
+		@include animation(alpha-in .25s null null null forwards);
+	}
+
 	.row .intro {
-		margin-bottom: 100px;
+		margin: 25px 0 100px 0;
 	}
 
 	.simpleCart_shelfItem {
 		margin-bottom: 50px;
 
 		a {
+			display: inline-block;
 			color: $darkGrey;
 			text-decoration: none;
 			
@@ -497,10 +528,28 @@ footer {
 		}
 
 		.header {
+			position: relative;
 			img {
 				width: 100%;
 			}
+			.over {
+				@include transition(opacity, 0.1s);
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				background: rgba(255,255,255,0.9) url('../img/jar-over.png') no-repeat center center;
+				width: 100%;
+				height: 100%;
+			}
 		}
+		.header:hover {
+			.over {
+				@include transition(opacity, 0.2s);
+				opacity: 1;
+			}
+		}
+
 		.details {
 			padding: 20px 0;
 			background: $yellow;
@@ -568,3 +617,13 @@ footer {
 	}
 }
 
+/***** ANIMATIONS *****/
+
+@include keyframes(alpha-in) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
