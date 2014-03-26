@@ -64,7 +64,7 @@ function setupMainListeners(){
 		stickyThreshold = parseInt($('#intro').css('height'), 10);
 	});
 
-	$('#sticky-basket').click(function(){
+	$('#menu-basket').click(function(){
 		displayBasket();
 	});
 
@@ -74,6 +74,10 @@ function setupMainListeners(){
 
 	$('#find-out-more-btn').click(function(){
 		onMenu('rent', scrollDuration);
+	});
+
+	$('.intro .stockists').click(function(){
+		$('html, body').animate({scrollTop: $("#stockist-list").offset().top}, scrollDuration);
 	});
 
 	simpleCart.bind( 'afterAdd' , function( item ){

@@ -17,16 +17,33 @@
 	<!-- main information page -->
 	<section id="main">	
 		<header data-0="-webkit-filter: brightness(100%)" data-700="-webkit-filter: brightness(20%)">
-			<nav class="navbar">
-				<div class="navbar-inner">
-					<ul class="nav">
-						<li class="rent"><a href="#">Rent Bees</a></li>
-						<li class="adopt"><a href="#">Adopt Bees</a></li>
-						<li class="about"><a href="#">About Us</a></li>
-						<li class="shop"><a href="#">The Shop</a></li>
-					</ul>
+
+			<div id="static-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-2"><div class="logo"></div></div>
+						<div class="col-sm-8">
+							<nav class="navbar">
+								<div class="navbar-inner">
+									<ul class="nav">
+										<li class="rent"><a href="#">Rent Bees</a></li>
+										<li class="adopt"><a href="#">Adopt Bees</a></li>
+										<li class="about"><a href="#">About Us</a></li>
+										<li class="contact"><a href="#">Contact</a></li>
+										<li class="shop"><a href="#">The Shop</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+						<div class="col-sm-2">
+							<div class="menu-basket">
+								<label>Basket</label>&nbsp;&#40;<span class="simpleCart_quantity"></span>&#41;
+							</div>	
+						</div>
+					</div>
 				</div>
-			</nav>
+			</div>
+
 			<div id="intro">
 				<div class="container">
 					<div class="logo" data-0="margin-top:0px" data-700="margin-top:-300px">
@@ -178,22 +195,15 @@
 
 	<!-- it's the shop bit -->
 	<section id="shop">
-		<div id="basket-container">
-			<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5">
-				<div id="sticky-basket">
-					<label>Basket</label>&nbsp;&#40;<span class="simpleCart_quantity"></span>&#41;
-				</div>		
-			</div>
-		</div>
-		
 		<div id="products">
-			
 			<div class="container">	
+				<h1>The Shop</h1>
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 						<div class="intro">
 							<p>All our honey is 100% Pure Raw Honey harvested by hand. It's simply filtered and jarred - nothing changed and nothing added.</p>
 							<p>It contains ative anti-bacterial ingredients that can help the immune system, heart and build immunity to seasonal allergies such as hay fever.</p>
+							<a class="stockists" href="#">View Stockists</a>
 						</div>
 					</div>
 				</div>
@@ -272,7 +282,27 @@
 					</a>
 				</div>
 				<!-- END PRODUCTS -->
-
+			</div>
+			<div class="container">
+				<div id="stockist-list">
+					<h3>Stockists</h3>
+					<p>
+						<a href="" target="_blank">Fortnum &amp; Mason</a><br>
+						181 Piccadily, London, W1A 1ER
+					</p>
+					<p>
+						<a href="" target="_blank">A. Gold</a><br>
+						42 Brushfield Street, London, E1 6AG
+					</p>
+					<p>
+						<a href="" target="_blank">E5 Bakehouse</a><br>
+						Arch 395 Mentmore Terrace, London, E8 3PH
+					</p>
+					<p>
+						<a href="" target="_blank">London Borough of Jam</a><br>
+						51d Chatsworth Road, London, E5 0LH
+					</p>
+				</div>
 			</div>
 
 		</div>
@@ -310,17 +340,29 @@
 	</section>
 
 	<div id="sticky-menu">
-		<nav class="navbar">
-			<div class="navbar-inner">
-				<ul class="nav">
-					<li class="rent"><a href="#">Rent Bees</a></li>
-					<li class="adopt"><a href="#">Adopt Bees</a></li>
-					<li class="logo"></li>
-					<li class="about"><a href="#">About Us</a></li>
-					<li class="shop"><a href="#">The Shop</a></li>
-				</ul>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2"><div class="logo"></div></div>
+				<div class="col-sm-8">
+					<nav class="navbar">
+						<div class="navbar-inner">
+							<ul class="nav">
+								<li class="rent"><a href="#">Rent Bees</a></li>
+								<li class="adopt"><a href="#">Adopt Bees</a></li>
+								<li class="about"><a href="#">About Us</a></li>
+								<li class="contact"><a href="#">Contact</a></li>
+								<li class="shop"><a href="#">The Shop</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+				<div class="col-sm-2">
+					<div class="menu-basket">
+						<label>Basket</label>&nbsp;&#40;<span class="simpleCart_quantity"></span>&#41;
+					</div>	
+				</div>
 			</div>
-		</nav>
+		</div>
 	</div>
 </body>
 	<!-- build:js js/scripts.min.js -->
