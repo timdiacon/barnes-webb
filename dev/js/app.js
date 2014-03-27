@@ -1,6 +1,7 @@
 var stickyOpen = false;
 var stickyMenuHeight = 50;
 var isShop = false;
+var basketVisible = false;
 var scrollDuration = 500;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
 
@@ -69,7 +70,7 @@ function setupMainListeners(){
 		stickyThreshold = parseInt($('#intro').css('height'), 10);
 	});
 
-	$('#menu-basket').click(function(){
+	$('.menu-basket').click(function(){
 		displayBasket();
 	});
 
@@ -83,6 +84,10 @@ function setupMainListeners(){
 
 	$('.intro .stockists').click(function(){
 		$('html, body').animate({scrollTop: $("#stockist-list").offset().top}, scrollDuration);
+	});
+
+	$('#sticky-menu .logo').click(function(){
+		$('html, body').animate({scrollTop: 0}, scrollDuration);
 	});
 
 	$('#adopt-accordion .panel-heading').click(function(){
@@ -139,13 +144,22 @@ function onMenu(section, duration){
 			if(isShop) hideShop();
 			$('html, body').animate({scrollTop: $("#about-us").offset().top}, duration);
 			break;
+		case 'contact':
+			if(isShop) hideShop();
+			$('html, body').animate({scrollTop: $("#contact").offset().top}, duration);
+			break;
 		case 'shop':
-			if(!isShop)displayShop();
+			if(!isShop || basketVisible){
+				displayShop();
+			}
 			break;
 	}
 }
 
 function displayShop(){
+	if(basketVisible){
+		hideBasket();
+	}
 	$('#shop').removeClass('hidden');
 	$('#shop').addClass('visible');
 	$('#main').removeClass('visible');
@@ -167,11 +181,16 @@ function hideShop(){
 }
 
 function displayBasket(){
+	if(!isShop){
+		displayShop();
+	}
 	$('#basket').css('display', 'block');
-	$('#products, #basket-container').css('display', 'none');	
+	$('#products, #basket-container').css('display', 'none');
+	basketVisible = true;	
 }
 
 function hideBasket(){
 	$('#basket').css('display', 'none');
 	$('#products, #basket-container').css('display', 'block');
+	basketVisible = false;
 }

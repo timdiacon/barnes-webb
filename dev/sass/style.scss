@@ -37,12 +37,17 @@ h1 {
 }
 
 h2 {
-	font-size: 25px;
-	font-weight: 600;
+	font-size: 40px;
+	font-weight: 300;
 
 	@media (max-width: $screen-xs-max) {
 		font-size: 20px;
 	}
+}
+
+h3 {
+	margin: 50px 0 30px 0;
+	font-weight: 600;
 }
 
 p {
@@ -362,11 +367,13 @@ header {
 	height: 75px;
 }
 
+/*
 .contact {
 	color: $yellow;
 	text-decoration: underline;
 	margin-right: 10px;
 }
+*/
 
 .btn-default:hover {
 	background: $yellow;
@@ -572,10 +579,37 @@ nav {
 	}
 }
 
+/***** CONTACT *****/
+
+#contact {
+	background: $darkGrey;
+	h2 {
+		color: white;
+	}
+	a, .contact {
+		display: block;
+		font-size: 25px;
+		padding: 10px 0;
+		color: $yellow;
+		text-decoration: underline;
+	}
+}
+
 
 /***** EMAIL SIGN-UP *****/
 
 #email-signup {
+	padding: 40px 0;
+	background: $lightGrey;		
+	
+	.input-holder {
+		margin: 20px 0 50px 0;
+	}
+
+	h3 {
+		font-weight: 300;
+	}
+
 	form {	
 		input {
 			border: none;
@@ -589,7 +623,7 @@ nav {
 			background: $mustard;
 			text-decoration: none;
 		}
-		margin-bottom: 15px;
+		padding-bottom: 20px;
 	}
 	.invalid {
 		display: none;
@@ -603,22 +637,6 @@ nav {
 		}
 	}
 
-	padding-bottom: 80px;
-}
-
-footer {
-	height: 200px;
-	background: $darkGrey;
-	text-align: center;
-	padding-top: 50px;
-	
-	.contact {
-		margin: 25px 0;
-	}
-
-	.footnote {
-		color: white;
-	}
 }
 
 /***** SHOP *****/

@@ -2,28 +2,33 @@ BeeTasks:
   ✔ convert jquery animations to css @done (14-03-25 16:17)
   ✔ update header to latest design @done (14-03-27 11:04)
   ✔ Implement mobile menu @done (14-03-27 12:44)
-  ☐ Implement adopt bees new design
+  ✔ Implement adopt bees new design @done (14-03-27 15:16)
+  ✔ New Contact / Footer design plus linking @done (14-03-27 16:41)
+  ✔ link menu logo to top of page @done (14-03-27 16:43)
+  ✔ add stockists link - and content @done (14-03-27 11:05)
   ☐ finish styling of basket
   ☐ add empty basket button
-  ☐ add to basket animation
+  ☐ implement add to basket animation
   ☐ make basket more mobile friendly
-  ✔ add stockists link - and content @done (14-03-27 11:05)
-  ☐ adoption add to basket action
+  ☐ implement adoption add to basket action
   ☐ add social links
   ☐ implement quotes carousel
-  ☐ faq
   ☐ crazy hexagon rollover shit
   ☐ add in rollover animations
-  ☐ get favicon
   ☐ fix up email sign up
-  ☐ add analytics code
-  ☐ get ftp details
   ☐ load adoption plan data via JSON and populate with Transparency.js
+  ☐ Fix "close all" bug in adoption accordion
 
 Backlog:
   ☐ adoption section once Chris finished design
 
 Bee MaybeTasks:
+  ☐ faq
   ☐ implement mobile friendly header
   ☐ add in routing
   ☐ basic stock management via json (instock / out of stock)
+
+Deploy:
+  ☐ get ftp details
+  ☐ add analytics code
+  ☐ get favicon
