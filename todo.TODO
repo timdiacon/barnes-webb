@@ -18,9 +18,9 @@ BeeTasks:
   ☐ fix up email sign up
   ☐ load adoption plan data via JSON and populate with Transparency.js
   ☐ Fix "close all" bug in adoption accordion
+  ☐ check if using .click() is bad idea...?
 
 Backlog:
-  ☐ adoption section once Chris finished design
 
 Bee MaybeTasks:
   ☐ faq

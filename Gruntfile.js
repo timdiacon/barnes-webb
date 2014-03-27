@@ -87,7 +87,7 @@ module.exports = function(grunt) {
 	// watch during dev
 	grunt.registerTask('default',['bowerInstall', 'compass:dev', 'watch:css']);
 	// build that shit
-	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin', 'htmlmin']);
+	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin', 'htmlmin', 'imagemin']);
 
 	// TODO clean, min-versioning, FIX image-min?
 };
