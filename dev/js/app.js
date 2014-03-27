@@ -51,6 +51,11 @@ function setupMainListeners(){
 	$('.navbar li').click(function(){
 		var id = $(this).attr('class');
 		onMenu(id, (isShop) ? 0 : scrollDuration);
+
+		if($('.navbar-header').css('display') != 'none'){
+			$(".navbar-header .navbar-toggle").click();
+		}
+
 		return false;
 	});
 
@@ -78,6 +83,13 @@ function setupMainListeners(){
 
 	$('.intro .stockists').click(function(){
 		$('html, body').animate({scrollTop: $("#stockist-list").offset().top}, scrollDuration);
+	});
+
+	$('#adopt-accordion .panel-heading').click(function(){
+		$('#adopt-accordion .panel').each(function(i, o){
+			$(o).removeClass("open");
+		});
+		$(this).parent().addClass('open');
 	});
 
 	simpleCart.bind( 'afterAdd' , function( item ){
