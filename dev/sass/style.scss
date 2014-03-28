@@ -392,6 +392,7 @@ header {
 	border: solid 1px $darkGrey;
 	cursor: pointer;
 	display: inline-block;
+	width: 100%;
 }
 
 
@@ -736,10 +737,20 @@ nav {
 	background: $lightGrey;
 	display: none;
 
+	.left {
+		text-align: left;
+	}
+	.right {
+		text-align: right;
+	}
+
 	.itemRow {
 		text-align: left;
 		img {
 			width: 100%;
+		}
+		.item-details {
+			padding-top: 15px;
 		}
 		.item-quantity {
 			input {
@@ -752,15 +763,20 @@ nav {
 		}
 		.item-total {
 			text-align: right;
+			line-height: 55px;
+		}
+		a {
+			color: $darkGrey;
+			text-decoration: none;
+			display: block;
+			width: 100%;
+			line-height: 55px;
 		}
 	}
 
 	.summary {
-		.left {
-			text-align: left;
-		}
-		.right {
-			text-align: right;
+		.subtotal {
+			padding-bottom: 5px;
 		}
 		.total {
 			font-weight: 600;
@@ -775,6 +791,10 @@ nav {
 				text-decoration: none;
 			}
 		}
+	}
+
+	@media (min-width:$screen-sm-min){
+		//font-size: 12px;
 	}
 }
 

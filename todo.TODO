@@ -6,11 +6,10 @@ BeeTasks:
   ✔ New Contact / Footer design plus linking @done (14-03-27 16:41)
   ✔ link menu logo to top of page @done (14-03-27 16:43)
   ✔ add stockists link - and content @done (14-03-27 11:05)
-  ☐ finish styling of basket
-  ☐ add empty basket button
-  ☐ implement add to basket animation
+  ☐ update basket to final design
   ☐ make basket more mobile friendly
   ☐ implement adoption add to basket action
+  ☐ implement add to basket animation
   ☐ add social links
   ☐ implement quotes carousel
   ☐ crazy hexagon rollover shit
@@ -19,6 +18,7 @@ BeeTasks:
   ☐ load adoption plan data via JSON and populate with Transparency.js
   ☐ Fix "close all" bug in adoption accordion
   ☐ check if using .click() is bad idea...?
+  ☐ create a "Your Basket it Empty" page
 
 Backlog:
 

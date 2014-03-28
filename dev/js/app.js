@@ -33,9 +33,9 @@ $(document).ready(function(){
 			//{ attr: "total" , view: 'currency', label: false},
 			{ view: function(item, column){
 				var html = '<div class="row">';
-				html += '<div class="col-sm-2 col-sm-offset-2"><img src="' + item.get('thumb') + '"></div>';
-				html += '<div class="col-sm-4">' + item.get('name') + '<br>' + simpleCart.toCurrency(item.price()) + '</div>';
-				html += '<div class="item-quantity col-sm-1"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div>';
+				html += '<div class="col-sm-2 col-sm-offset-1"><img src="' + item.get('thumb') + '"></div>';
+				html += '<div class="item-details col-sm-4">' + item.get('name') + '<br>' + simpleCart.toCurrency(item.price()) + '</div>';
+				html += '<div class="item-quantity col-sm-3"><div class="row"><div class="right item_decrement col-sm-2"><a href="javascript:;" class="simpleCart_decrement">-</a></div><div class="col-sm-8"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div><div class="left item_increment col-sm-2"><a href="javascript:;" class="simpleCart_increment">+</a></div></div></div>';
 				html += '<div class="item-total col-sm-1">' + simpleCart.toCurrency(item.total()) + '</div>';
 				html += '</div>';
 				return html;
@@ -44,7 +44,7 @@ $(document).ready(function(){
 	});
 
 	//displayShop();
-	//displayBasket();
+	displayBasket();
 
 });
 
@@ -76,6 +76,10 @@ function setupMainListeners(){
 
 	$('#continue-shopping').click(function(){
 		hideBasket();
+	});
+
+	$('#empty-basket').click(function(){
+		simpleCart.empty();
 	});
 
 	$('#find-out-more-btn').click(function(){
