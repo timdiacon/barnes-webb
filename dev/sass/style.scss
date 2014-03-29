@@ -537,6 +537,10 @@ nav {
 			cursor: pointer;
 			font-weight: 400;
 		}
+
+		&.flash {
+			@include animation(yellow-flash 1s null null null forwards);
+		}
 	}
 	
 	@media (min-width: $screen-sm-min) {	
@@ -746,6 +750,7 @@ nav {
 
 	.itemRow {
 		text-align: left;
+		margin-bottom: 30px;
 		img {
 			width: 100%;
 		}
@@ -821,4 +826,13 @@ nav {
   100% {
     opacity: 1;
   }
+}
+
+@include keyframes(yellow-flash){
+	0% {
+		background-color: rgba($yellow, 1);
+	}
+	100% {
+		background-color: rgba($yellow, 0);
+	}	
 }

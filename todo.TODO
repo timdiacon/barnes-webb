@@ -6,8 +6,8 @@ BeeTasks:
   ✔ New Contact / Footer design plus linking @done (14-03-27 16:41)
   ✔ link menu logo to top of page @done (14-03-27 16:43)
   ✔ add stockists link - and content @done (14-03-27 11:05)
-  ☐ update basket to final design
-  ☐ make basket more mobile friendly
+  ✔ update basket to final design @done (14-03-29 09:59)
+  ✔ make basket more mobile friendly @done (14-03-29 09:59)
   ☐ implement adoption add to basket action
   ☐ implement add to basket animation
   ☐ add social links
@@ -19,6 +19,7 @@ BeeTasks:
   ☐ Fix "close all" bug in adoption accordion
   ☐ check if using .click() is bad idea...?
   ☐ create a "Your Basket it Empty" page
+  ☐ disable :hover for touch
 
 Backlog:
 

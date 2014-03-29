@@ -31,7 +31,7 @@ $(document).ready(function(){
 				var html = '<div class="row">';
 				html += '<div class="item-thumb col-sm-2 col-sm-offset-1"><img src="' + item.get('thumb') + '"></div>';
 				html += '<div class="item-details col-xs-6 col-sm-4 col-md-5">' + item.get('name') + '<br>' + simpleCart.toCurrency(item.price()) + '</div>';
-				html += '<div class="item-quantity col-xs-3 col-sm-2"><div class="row"><div class="right item_decrement col-xs-2"><a href="javascript:;" class="simpleCart_decrement">-</a></div><div class="col-xs-8"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div><div class="left item_increment col-xs-2"><a href="javascript:;" class="simpleCart_increment">+</a></div></div></div>';
+				html += '<div class="item-quantity col-xs-3 col-sm-2"><div class="row"><div class="right item_decrement col-xs-2"><a href="javascript:;" class="simpleCart_decrement">-</a></div><div class="item-quantity col-xs-8"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div><div class="left item_increment col-xs-2"><a href="javascript:;" class="simpleCart_increment">+</a></div></div></div>';
 				html += '<div class="item-total col-xs-3 col-sm-2 col-md-1">' + simpleCart.toCurrency(item.total()) + '</div>';
 				html += '</div>';
 				return html;
@@ -99,10 +99,14 @@ function setupMainListeners(){
 		});
 		$(this).parent().addClass('open');
 	});
-
+	
 	simpleCart.bind( 'afterAdd' , function( item ){
-		// make something happen when you add item to basket!
+		$('.menu-basket').removeClass('flash');
+		setTimeout(function () { 
+		    $('.menu-basket').addClass('flash');
+		}, 100);
 	});
+
 
 }
 
@@ -196,4 +200,15 @@ function hideBasket(){
 	$('#basket').css('display', 'none');
 	$('#products, #basket-container').css('display', 'block');
 	basketVisible = false;
+}
+
+/***** MISC *****/
+
+// cross browser animation callbacks...
+var pfx = ["webkit", "moz", "MS", "o", ""];
+function PrefixedEvent(element, type, callback) {
+	for (var p = 0; p < pfx.length; p++) {
+		if (!pfx[p]) type = type.toLowerCase();
+		element.addEventListener(pfx[p]+type, callback, false);
+	}
 }
