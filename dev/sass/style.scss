@@ -485,7 +485,7 @@ nav {
 }
 
 #sticky-menu {
-
+	z-index: 1000;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -732,7 +732,7 @@ nav {
 #basket {
 	position: absolute;
 	top: 120px;
-	z-index: 2000;
+	z-index: 100;
 	width: 100%;
 	background: $lightGrey;
 	display: none;
@@ -758,7 +758,7 @@ nav {
 				text-align: center;
 				border: solid 1px $darkGrey;
 				background: $lightGrey;
-				padding: 15px;
+				padding: 15px 0;
 			}
 		}
 		.item-total {
@@ -796,8 +796,19 @@ nav {
 		}
 	}
 
-	@media (min-width:$screen-sm-min){
-		//font-size: 12px;
+	.headerRow {
+		display: none;
+	}
+
+	@media(max-width:$screen-xs-max){
+		top: 80px;
+		font-size: 16px;
+		.item-thumb, .dash {
+			display: none;
+		}
+		.item-details {
+			padding-top: 0 !important;
+		}
 	}
 }
 

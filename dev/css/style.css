@@ -547,6 +547,7 @@ nav a {
 
 /* line 487, ../sass/style.scss */
 #sticky-menu {
+  z-index: 1000;
   width: 100%;
   position: fixed;
   top: 0;
@@ -829,7 +830,7 @@ nav a {
 #basket {
   position: absolute;
   top: 120px;
-  z-index: 2000;
+  z-index: 100;
   width: 100%;
   background: #eae9e4;
   display: none;
@@ -860,7 +861,7 @@ nav a {
   text-align: center;
   border: solid 1px #5a5a52;
   background: #eae9e4;
-  padding: 15px;
+  padding: 15px 0;
 }
 /* line 764, ../sass/style.scss */
 #basket .itemRow .item-total {
@@ -896,63 +897,82 @@ nav a {
   color: #5a5a52;
   text-decoration: none;
 }
+/* line 799, ../sass/style.scss */
+#basket .headerRow {
+  display: none;
+}
+@media (max-width: 767px) {
+  /* line 732, ../sass/style.scss */
+  #basket {
+    top: 80px;
+    font-size: 16px;
+  }
+  /* line 806, ../sass/style.scss */
+  #basket .item-thumb, #basket .dash {
+    display: none;
+  }
+  /* line 809, ../sass/style.scss */
+  #basket .item-details {
+    padding-top: 0 !important;
+  }
+}
 
 /***** ANIMATIONS *****/
 @-moz-keyframes alpha-in {
-  /* line 807, ../sass/style.scss */
+  /* line 818, ../sass/style.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 810, ../sass/style.scss */
+  /* line 821, ../sass/style.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes alpha-in {
-  /* line 807, ../sass/style.scss */
+  /* line 818, ../sass/style.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 810, ../sass/style.scss */
+  /* line 821, ../sass/style.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-o-keyframes alpha-in {
-  /* line 807, ../sass/style.scss */
+  /* line 818, ../sass/style.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 810, ../sass/style.scss */
+  /* line 821, ../sass/style.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-ms-keyframes alpha-in {
-  /* line 807, ../sass/style.scss */
+  /* line 818, ../sass/style.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 810, ../sass/style.scss */
+  /* line 821, ../sass/style.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes alpha-in {
-  /* line 807, ../sass/style.scss */
+  /* line 818, ../sass/style.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 810, ../sass/style.scss */
+  /* line 821, ../sass/style.scss */
   100% {
     opacity: 1;
   }

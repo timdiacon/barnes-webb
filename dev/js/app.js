@@ -22,21 +22,17 @@ $(document).ready(function(){
 	simpleCart({
 		checkout: { 
 			type: "PayPal" , 
-			email: "you@yours.com" 
+			email: "paul@barnesandwebb.com" 
 		},
 		currency: "GBP",
 		shippingQuantityRate: 1,
 		cartColumns: [
-			//{ view: "image" , attr: "thumb", label: false },
-			//{ attr: "name" , label: false } ,
-			//{ attr: "price" , view: 'currency', label: false},
-			//{ attr: "total" , view: 'currency', label: false},
 			{ view: function(item, column){
 				var html = '<div class="row">';
-				html += '<div class="col-sm-2 col-sm-offset-1"><img src="' + item.get('thumb') + '"></div>';
-				html += '<div class="item-details col-sm-4">' + item.get('name') + '<br>' + simpleCart.toCurrency(item.price()) + '</div>';
-				html += '<div class="item-quantity col-sm-2"><div class="row"><div class="right item_decrement col-sm-2"><a href="javascript:;" class="simpleCart_decrement">-</a></div><div class="col-sm-8"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div><div class="left item_increment col-sm-2"><a href="javascript:;" class="simpleCart_increment">+</a></div></div></div>';
-				html += '<div class="item-total col-sm-2">' + simpleCart.toCurrency(item.total()) + '</div>';
+				html += '<div class="item-thumb col-sm-2 col-sm-offset-1"><img src="' + item.get('thumb') + '"></div>';
+				html += '<div class="item-details col-xs-6 col-sm-4 col-md-5">' + item.get('name') + '<br>' + simpleCart.toCurrency(item.price()) + '</div>';
+				html += '<div class="item-quantity col-xs-3 col-sm-2"><div class="row"><div class="right item_decrement col-xs-2"><a href="javascript:;" class="simpleCart_decrement">-</a></div><div class="col-xs-8"><input type="text" value="' +  item.quantity() + '" class="simpleCart_input"></div><div class="left item_increment col-xs-2"><a href="javascript:;" class="simpleCart_increment">+</a></div></div></div>';
+				html += '<div class="item-total col-xs-3 col-sm-2 col-md-1">' + simpleCart.toCurrency(item.total()) + '</div>';
 				html += '</div>';
 				return html;
 			}}
@@ -44,7 +40,7 @@ $(document).ready(function(){
 	});
 
 	//displayShop();
-	displayBasket();
+	//displayBasket();
 
 });
 
@@ -72,6 +68,9 @@ function setupMainListeners(){
 
 	$('.menu-basket').click(function(){
 		displayBasket();
+		if($('.navbar-header').css('display') != 'none'){
+			$(".navbar-header .navbar-toggle").click();
+		}
 	});
 
 	$('#continue-shopping').click(function(){
