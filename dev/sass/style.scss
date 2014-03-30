@@ -147,11 +147,8 @@ header {
 
 .detail-block, .detail-block-alt {
 	background: $lightGrey;	
-	padding: 50px 0 50px 0;
+	padding: 30px 0 30px 0;
 
-	h2 {
-		margin-bottom: 30px;
-	}
 	p {
 		line-height: 1.7em;
 	}
@@ -178,8 +175,17 @@ header {
 }
 
 .detail-block-alt {
-	background: $darkGrey;
-	color: white;
+	background: $yellow;
+	color: $darkGrey;
+
+	a {
+		color: $darkGrey;
+	}
+
+	.prices {
+		color: $mustard;
+		margin-top: 30px;
+	}
 }
 
 /***** PARALLAX HEXAGONS *****/
@@ -644,6 +650,23 @@ nav {
 
 }
 
+// social icons...
+#footer-social {
+	margin-bottom: 20px;
+	a {
+		opacity: 0.5;
+		padding: 0 10px;
+		img {
+			width: 30px;
+			height: 30px;
+		}
+	}
+	a:hover {
+		opacity: 1;
+		@include transition(opacity, 0.2s);
+	}
+}
+
 /***** SHOP *****/
 
 #shop {
@@ -815,6 +838,35 @@ nav {
 			padding-top: 0 !important;
 		}
 	}
+}
+
+/***** STICKY SOCIAL *****/
+
+#sticky-social {
+	position: fixed;
+	bottom: 20px;
+	right:10px;
+	width: 40px;
+	height: 140px;
+
+	.social-icon {
+		width: 40px;
+		height: 40px;
+		margin-bottom: 5px;
+	}
+
+	#fb {
+		background: url('../img/fb-c.svg') no-repeat;
+		@include background-size(cover);
+	}
+	#tw {
+		background: url('../img/tw-c.svg') no-repeat;
+		@include background-size(cover);
+	}
+	#ig {
+		background: url('../img/ig-c.svg') no-repeat;
+		@include background-size(cover);
+	}	
 }
 
 /***** ANIMATIONS *****/

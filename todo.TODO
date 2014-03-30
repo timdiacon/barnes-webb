@@ -8,18 +8,19 @@ BeeTasks:
   ✔ add stockists link - and content @done (14-03-27 11:05)
   ✔ update basket to final design @done (14-03-29 09:59)
   ✔ make basket more mobile friendly @done (14-03-29 09:59)
-  ☐ implement adoption add to basket action
-  ☐ implement add to basket animation
-  ☐ add social links
-  ☐ implement quotes carousel
-  ☐ crazy hexagon rollover shit
-  ☐ add in rollover animations
-  ☐ fix up email sign up
+  ✔ implement adoption add to basket action @done (14-03-29 16:46)
+  ✔ implement add to basket animation @done (14-03-29 17:16)
+  ✔ add social links @done (14-03-30 18:49)
   ☐ load adoption plan data via JSON and populate with Transparency.js
   ☐ Fix "close all" bug in adoption accordion
+  ☐ fix up email sign up
+  ☐ Adoption scroll to top of opened
+  ☐ disable :hover for touch
+  ☐ implement quotes carousel
+  ☐ add in rollover animations
   ☐ check if using .click() is bad idea...?
   ☐ create a "Your Basket it Empty" page
-  ☐ disable :hover for touch
+  ☐ crazy hexagon rollover shit
 
 Backlog:
 
@@ -33,3 +34,11 @@ Deploy:
   ☐ get ftp details
   ☐ add analytics code
   ☐ get favicon
+
+Notes:
+ ☐ Social sidebar is a bit shit
+ ☐ removed underline from Phone Number as not a link
+ ☐ Can I have all text in text file to copy paste
+ ☐ Think image gallery in adoption is a bit overkill - either single image, or none
+ ☐ Small bug on carousel if you close them all the last closed remains white
+ ☐ Need to make the page scroll to fit in currently opened adoption pane
