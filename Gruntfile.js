@@ -77,7 +77,8 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files:[
-					{expand: true, flatten:true, src: ['dev/index.html'], dest: 'build/', filter: 'isFile'}
+					{expand: true, flatten:true, src: ['dev/index.html'], dest: 'build/', filter: 'isFile'},
+					{expand: true, flatten:true, src: ['dev/img/*.svg'], dest: 'build/img', filter: 'isFile'}
 				]
 			}
 		}

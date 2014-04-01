@@ -97,7 +97,11 @@ function setupMainListeners(){
 		$('#adopt-accordion .panel').each(function(i, o){
 			$(o).removeClass("open");
 		});
-		$(this).parent().addClass('open');
+		// add open class unless was already open
+		if(!$(this).parent().find('.panel-collapse').hasClass('in')){
+			$(this).parent().addClass('open');
+		}
+		scrollToOpenPanel($(this).parent());
 	});
 	
 	simpleCart.bind( 'afterAdd' , function( item ){
@@ -161,6 +165,13 @@ function onMenu(section, duration){
 			}
 			break;
 	}
+}
+
+function scrollToOpenPanel(item){
+	var row = $('#adopt-accordion .panel').index(item);
+	var accordionTop = $("#adopt-accordion").offset().top;
+	var pos = accordionTop - stickyMenuHeight + (80 * row);
+	$('html, body').animate({scrollTop: pos}, scrollDuration/2);
 }
 
 function displayShop(){

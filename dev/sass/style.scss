@@ -255,29 +255,29 @@ header {
 	height: 300px;
 	
 	&#hives {
-		background: url('../img/hives-sm.jpg') no-repeat;
+		background: $darkGrey url('../img/hives-sm.jpg') no-repeat;
 		@include background-size(cover);
 	}
 	&#bee-finger {
-		background: url('../img/bee-finger-sm.jpg') no-repeat;
+		background: $darkGrey url('../img/bee-finger-sm.jpg') no-repeat;
 		@include background-size(cover);
 	}
 	&#men-at-work {
-		background: url('../img/men-at-work-sm.jpg') no-repeat;
+		background: $darkGrey url('../img/men-at-work-sm.jpg') no-repeat;
 		@include background-size(cover);
 	}
 
 	@media (min-width: $screen-sm-min) {
 		&#hives {
-			background: url('../img/hives-lg.jpg') no-repeat;
+			background: $darkGrey url('../img/hives-lg.jpg') no-repeat;
 			@include background-size(cover);
 		}
 		&#bee-finger {
-			background: url('../img/bee-finger-lg.jpg') no-repeat;
+			background: $darkGrey url('../img/bee-finger-lg.jpg') no-repeat;
 			@include background-size(cover);
 		}
 		&#men-at-work {
-			background: url('../img/men-at-work-lg.jpg') no-repeat;
+			background: $darkGrey url('../img/men-at-work-lg.jpg') no-repeat;
 			@include background-size(cover);
 		}
 	}
@@ -604,6 +604,12 @@ nav {
 		color: $yellow;
 		text-decoration: underline;
 	}
+
+	@media(max-width:$screen-xs-max){
+		a {
+			font-size: 20px;
+		}
+	}
 }
 
 
@@ -866,7 +872,11 @@ nav {
 	#ig {
 		background: url('../img/ig-c.svg') no-repeat;
 		@include background-size(cover);
-	}	
+	}
+
+	@media(max-width:$screen-xs-max) {
+		display: none;
+	}
 }
 
 /***** ANIMATIONS *****/
