@@ -11,10 +11,11 @@ BeeTasks:
   ✔ implement adoption add to basket action @done (14-03-29 16:46)
   ✔ implement add to basket animation @done (14-03-29 17:16)
   ✔ add social links @done (14-03-30 18:49)
-  ☐ load adoption plan data via JSON and populate with Transparency.js
   ✔ Fix "close all" bug in adoption accordion @done (14-04-01 15:07)
-  ☐ fix up email sign up
   ✔ Adoption scroll to top of opened @done (14-04-01 15:01)
+  ✔ load adoption plan data via JSON and populate with Transparency.js @done (14-04-02 10:11)
+  ☐ Switch open icon to close icon on adoption when open
+  ☐ fix up email sign up
   ☐ disable :hover for touch
   ☐ implement quotes carousel
   ☐ add in rollover animations

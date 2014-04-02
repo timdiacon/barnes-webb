@@ -8,6 +8,7 @@ stickyThreshold = parseInt($('#intro').css('height'), 10);
 $(document).ready(function(){
 	console.log("Release The Bees!");
 	
+	$('#adopt-accordion').render(adoptionPlans, directives);
 	setupMainListeners();
 
 	// init the crazy parallax shit if we're not on mobile
@@ -38,6 +39,7 @@ $(document).ready(function(){
 			}}
 		]
 	});
+
 
 	//displayShop();
 	//displayBasket();
@@ -96,10 +98,12 @@ function setupMainListeners(){
 	$('#adopt-accordion .panel-heading').click(function(){
 		$('#adopt-accordion .panel').each(function(i, o){
 			$(o).removeClass("open");
+			$(o).find('.panel-heading .action').html('+');
 		});
 		// add open class unless was already open
 		if(!$(this).parent().find('.panel-collapse').hasClass('in')){
 			$(this).parent().addClass('open');
+			$(this).find('.action').html('&#8211;');
 		}
 		scrollToOpenPanel($(this).parent());
 	});
