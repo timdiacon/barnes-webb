@@ -14,9 +14,12 @@ BeeTasks:
   ✔ Fix "close all" bug in adoption accordion @done (14-04-01 15:07)
   ✔ Adoption scroll to top of opened @done (14-04-01 15:01)
   ✔ load adoption plan data via JSON and populate with Transparency.js @done (14-04-02 10:11)
-  ☐ Switch open icon to close icon on adoption when open
-  ☐ fix up email sign up
-  ☐ disable :hover for touch
+  ✔ Switch open icon to close icon on adoption when open @done (14-04-02 10:21)
+  ✔ fix up email sign up @done (14-04-03 13:35)
+  ✔ disable :hover for touch - converted to JS where nescessary @done (14-04-03 13:46)
+  ✔ simplify hexagon parallax @done (14-04-03 14:21)
+  ☐ implement products via Transparency
+  ☐ implement basic stock management
   ☐ implement quotes carousel
   ☐ add in rollover animations
   ☐ check if using .click() is bad idea...?
@@ -27,7 +30,7 @@ Backlog:
 
 Bee MaybeTasks:
   ☐ faq
-  ☐ implement mobile friendly header
+  ✔ implement mobile friendly header @done (14-04-03 14:21)
   ☐ add in routing
   ☐ basic stock management via json (instock / out of stock)
   ☐ Compass Sprite

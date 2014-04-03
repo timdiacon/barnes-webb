@@ -105,11 +105,11 @@ header {
 #intro {
 	background: url('../img/two-gay-chaps-lg.jpg') no-repeat center center;
 	@include background-size(cover);
-	height: 700px;
+	height: 600px;
 	color: white;
 
 	.container {
-		padding-top: 375px;
+		padding-top: 275px;
 		.logo {
 			p {
 				margin-top: 10px;
@@ -136,7 +136,7 @@ header {
 .arrow-mask {
 	background: url('../img/arrow-mask.png') no-repeat center center;
 	height: 30px;
-	margin-top: 670px;
+	margin-top: 570px;
 
 	@media (max-width: $screen-xs-max) {
 		margin-top: 370px;
@@ -204,7 +204,7 @@ header {
 			
 			#hex-1 {
 				position: absolute;
-				margin-top: 0px;
+				margin-top: 350px;
 				left: 10%;
 				width: 150px;
 				height: 150px;
@@ -214,8 +214,8 @@ header {
 
 			#hex-2 {
 				position: absolute;
-				margin-top: 100px;
-				right: 10%;
+				margin-top: 350px;
+				right: 12%;
 				width: 200px;
 				height: 200px;
 				background: url('../img/hex-2.png') no-repeat center center;
@@ -224,8 +224,8 @@ header {
 
 			#hex-3 {
 				position: absolute;
-				margin-top: 300px;
-				left: 5%;
+				margin-top: 450px;
+				left: 30%;
 				width: 200px;
 				height: 200px;
 				background: url('../img/hex-3.png') no-repeat center center;
@@ -234,10 +234,10 @@ header {
 
 			#hex-4 {
 				position: absolute;
-				margin-top: 600px;
-				right: 15%;
-				width: 150px;
-				height: 150px;
+				margin-top: 375px;
+				right: 35%;
+				width: 125px;
+				height: 125px;
 				background: url('../img/hex-4.png') no-repeat center center;
 				background-size: 100%;
 			}
@@ -371,7 +371,7 @@ header {
 /***** MISC *****/
 
 .big-gap {
-	height: 75px;
+	height: 250px;
 }
 
 /*
@@ -633,20 +633,17 @@ nav {
 			border: none;
 			padding: 10px 15px;
 			width: 75%;
+			margin: 0;
 		}
 		#submit {
-			display: inline-block;
 			width: 25%;
 			padding: 10px 15px;
 			background: $mustard;
 			text-decoration: none;
+			border: none;
+			margin: 0;
 		}
 		padding-bottom: 20px;
-	}
-	.invalid {
-		display: none;
-		padding: 15px 0 5px 0;
-		color: $red;
 	}
 
 	@media (max-width: $screen-xs-max) {
@@ -726,12 +723,11 @@ nav {
 				background: rgba(255,255,255,0.9) url('../img/jar-over.png') no-repeat center center;
 				width: 100%;
 				height: 100%;
-			}
-		}
-		.header:hover {
-			.over {
-				@include transition(opacity, 0.2s);
-				opacity: 1;
+
+				&.hover {
+					@include transition(opacity, 0.2s);
+					opacity: 1;
+				}
 			}
 		}
 
@@ -739,7 +735,6 @@ nav {
 			padding: 20px 0;
 			background: $yellow;
 			text-align: center;
-
 		}
 	}
 

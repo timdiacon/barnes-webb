@@ -95,6 +95,15 @@ function setupMainListeners(){
 		$('html, body').animate({scrollTop: 0}, scrollDuration);
 	});
 
+	// adding rollover behaviour via js as goes funny on mobile when using css :hover
+	$('#shop .simpleCart_shelfItem .header .over').mouseover(function(){
+		$(this).addClass('hover');
+	});
+
+	$('#shop .simpleCart_shelfItem .header .over').mouseout(function(){
+		$(this).removeClass('hover');
+	});
+
 	$('#adopt-accordion .panel-heading').click(function(){
 		$('#adopt-accordion .panel').each(function(i, o){
 			$(o).removeClass("open");
@@ -215,15 +224,4 @@ function hideBasket(){
 	$('#basket').css('display', 'none');
 	$('#products, #basket-container').css('display', 'block');
 	basketVisible = false;
-}
-
-/***** MISC *****/
-
-// cross browser animation callbacks...
-var pfx = ["webkit", "moz", "MS", "o", ""];
-function PrefixedEvent(element, type, callback) {
-	for (var p = 0; p < pfx.length; p++) {
-		if (!pfx[p]) type = type.toLowerCase();
-		element.addEventListener(pfx[p]+type, callback, false);
-	}
 }
