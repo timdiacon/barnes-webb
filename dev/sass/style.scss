@@ -381,7 +381,14 @@ header {
 			display: block;
 			width: 100%;
 		}
+		@media(max-width:$screen-xs-max){
+			font-size: 20px;
+			.quotee {
+				font-size: 15px;
+			}
+		}
 	}
+
 }
 
 /***** MISC *****/

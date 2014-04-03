@@ -52,6 +52,9 @@ module.exports = function(grunt) {
     	},
 
     	imagemin: {
+    		options: {
+    			cache: false
+    		},
     		build: {
     			files: [{
     				expand: true,
@@ -88,7 +91,7 @@ module.exports = function(grunt) {
 	// watch during dev
 	grunt.registerTask('default',['compass:dev', 'watch:css']);
 	// build that shit
-	grunt.registerTask('build', ['bowerInstall', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin', 'htmlmin', 'imagemin']);
+	grunt.registerTask('build', ['useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin', 'htmlmin', 'imagemin']);
 	// bower
 	grunt.registerTask('bower',['bowerInstall']);
 	// TODO clean, min-versioning, FIX image-min?
