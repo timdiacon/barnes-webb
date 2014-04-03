@@ -359,12 +359,28 @@ header {
 	}
 }
 
-/***** HAPPY CUSTOMERS *****/
+/***** QUOTE CAROUSEL *****/
 
-#customer-pic-1 {
-	img {
-		width: 100%;
-		margin-bottom: 50px;
+#quote-carousel {
+	.item {
+		text-align: center;
+		font-size: 30px;
+		font-style: italic;
+		
+		.quote {
+			padding: 30px 0 20px 0;
+		}
+
+		.quotee {
+			color: $mustard;
+			padding-bottom: 10px;
+			font-size: 25px;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
 	}
 }
 
@@ -372,6 +388,10 @@ header {
 
 .big-gap {
 	height: 250px;
+
+	@media(max-width:$screen-xs-max){
+		display: none;
+	}
 }
 
 /*

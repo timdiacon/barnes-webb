@@ -19,6 +19,13 @@ $(document).ready(function(){
 	    });
 	}
 
+	// init OwlCarousel
+	$("#quote-carousel").owlCarousel({
+      autoPlay: false,
+      singleItem : true,
+      pagination: true
+  });
+
 	// init simplecart
 	simpleCart({
 		checkout: { 
@@ -158,19 +165,19 @@ function onMenu(section, duration){
 	switch(section){
 		case 'rent':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#rent").offset().top}, duration);
+			$('html, body').animate({scrollTop: $("#rent").offset().top - stickyMenuHeight}, duration);
 			break;
 		case 'adopt':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#adopt").offset().top}, duration);
+			$('html, body').animate({scrollTop: $("#adopt").offset().top - stickyMenuHeight}, duration);
 			break;
 		case 'about':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#about-us").offset().top}, duration);
+			$('html, body').animate({scrollTop: $("#about-us").offset().top - stickyMenuHeight}, duration);
 			break;
 		case 'contact':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#contact").offset().top}, duration);
+			$('html, body').animate({scrollTop: $("#contact").offset().top - stickyMenuHeight}, duration);
 			break;
 		case 'shop':
 			if(!isShop || basketVisible){
