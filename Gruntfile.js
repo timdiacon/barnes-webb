@@ -39,6 +39,8 @@ module.exports = function(grunt) {
 		},
 		
 		// BUILD
+		clean: ["build"],
+
 	    useminPrepare: {
     		html: 'dev/index.html',
     		options: {
@@ -77,6 +79,12 @@ module.exports = function(grunt) {
     		},
     	},
 
+    	rev: {
+    		files: {
+    			src: ['build/js/scripts.min.js', 'build/css/style.min.css']
+    		}
+    	},
+
 		copy: {
 			main: {
 				files:[
@@ -91,8 +99,8 @@ module.exports = function(grunt) {
 	// watch during dev
 	grunt.registerTask('default',['compass:dev', 'watch:css']);
 	// build that shit
-	grunt.registerTask('build', ['useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'usemin', 'htmlmin', 'imagemin']);
+	grunt.registerTask('build', ['clean', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'copy:main', 'rev', 'usemin', 'htmlmin', 'imagemin']);
 	// bower
 	grunt.registerTask('bower',['bowerInstall']);
-	// TODO clean, min-versioning, FIX image-min?
+	// TODO clean, min-versioning
 };
