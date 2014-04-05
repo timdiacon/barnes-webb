@@ -18,8 +18,9 @@ BeeTasks:
   ✔ fix up email sign up @done (14-04-03 13:35)
   ✔ disable :hover for touch - converted to JS where nescessary @done (14-04-03 13:46)
   ✔ simplify hexagon parallax @done (14-04-03 14:21)
-  ☐ implement products via Transparency
+  ☐ implement products via Google Spreadsheet
   ☐ implement basic stock management
+  ☐ Implement Shop error message if Google down
   ☐ implement quotes carousel
   ☐ add in rollover animations
   ☐ check if using .click() is bad idea...?

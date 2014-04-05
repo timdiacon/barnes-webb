@@ -11,13 +11,6 @@ $(document).ready(function(){
 	$('#adopt-accordion').render(adoptionPlans, directives);
 	setupMainListeners();
 
-	// init the crazy parallax shit if we're not on mobile
-	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-	    skrollr.init({
-	        forceHeight: false,
-	        smoothScrolling: false
-	    });
-	}
 
 	// init OwlCarousel
 	$("#quote-carousel").owlCarousel({
@@ -46,7 +39,21 @@ $(document).ready(function(){
 			}}
 		]
 	});
+	
+	// load the products for the shop
+	$.get( "https://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function( data ) {
+	  	var a = CSVToArray(data, ',');
+	  	a.splice(0, 1);
+	  	populateShop(a);
+	});
 
+	// init the crazy parallax shit if we're not on mobile
+	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+	    skrollr.init({
+	        forceHeight: false,
+	        smoothScrolling: false
+	    });
+	}
 
 	//displayShop();
 	//displayBasket();
@@ -231,4 +238,62 @@ function hideBasket(){
 	$('#basket').css('display', 'none');
 	$('#products, #basket-container').css('display', 'block');
 	basketVisible = false;
+}
+
+function populateShop(p){
+	var html = '';
+	$(p).each(function(i,k){
+		if(k[3] == 'TRUE'){
+			html += '<div class="simpleCart_shelfItem col-sm-6 col-sm-offset-0 col-md-4">';
+				html += '<a href="javascript:;" class="item_add">';
+					html += '<div class="header">';
+						html += '<img src="'+ k[2] +'" alt="'+ k[0] +'" class="item_thumb">';
+						html += '<div class="over"></div>';
+					html += '</div>';
+					html += '<div class="details">';
+						html += '<span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span>';
+						html += '<div class="add-to-basket">Add to Basket</div>';
+					html += '</div>';
+				html += '</a>';
+			html += '</div>';
+		}
+	});
+	$('#product-list').html(html);
+}
+
+// Thank you Mr Mulhoony-pants
+function CSVToArray( strData, strDelimiter ){
+    strDelimiter = (strDelimiter || ",");
+    var objPattern = new RegExp(
+                                (
+                                 // Delimiters.
+                                 "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+                                 
+                                 // Quoted fields.
+                                 "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+                                 
+                                 // Standard fields.
+                                 "([^\"\\" + strDelimiter + "\\r\\n]*))"
+                                 ),
+                                "gi"
+                                );
+    var arrData = [[]];
+    var arrMatches = null;
+    while (arrMatches = objPattern.exec( strData )){
+        var strMatchedDelimiter = arrMatches[ 1 ];
+        if (
+            strMatchedDelimiter.length &&
+            (strMatchedDelimiter != strDelimiter)
+            ){
+            arrData.push( [] );
+        }
+        if (arrMatches[ 2 ]){
+            var strMatchedValue = arrMatches[ 2 ].replace(new RegExp( "\"\"", "g" ),"\"");
+        } else {
+            var strMatchedValue = arrMatches[ 3 ];
+            
+        }
+        arrData[ arrData.length - 1 ].push( strMatchedValue );
+    }
+    return arrData;
 }
