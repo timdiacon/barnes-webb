@@ -55,7 +55,7 @@ p {
 }
 
 a {
-  color: $yellow;
+  color: $darkGrey;
   text-decoration: underline;
   &.page-link {
   	color: white;
@@ -63,7 +63,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: $yellow;
+  color: $darkGrey;
   text-decoration: underline;
   &.page-link {
   	color: white;
@@ -103,13 +103,13 @@ header {
 }
 
 #intro {
-	background: url('../img/two-gay-chaps-lg.jpg') no-repeat center center;
+	background: url('../img/barnes-and-webb-hero-lg.jpg') no-repeat center center;
 	@include background-size(cover);
-	height: 600px;
+	height: 650px;
 	color: white;
 
 	.container {
-		padding-top: 275px;
+		padding-top: 300px;
 		.logo {
 			p {
 				margin-top: 10px;
@@ -118,7 +118,7 @@ header {
 	}
 
 	@media (max-width: $screen-xs-max) {
-		background: url('../img/two-gay-chaps-lg.jpg') no-repeat center center;
+		background: url('../img/barnes-and-webb-hero-sm.jpg') no-repeat center center;
 		@include background-size(cover);
 		height: 400px;
 		padding-top: 100px;
@@ -126,17 +126,32 @@ header {
 		.container {
 			padding-top: 125px;
 			.logo {
-				font-size: 12px;
+				font-size: 14px;
 			}
 		}
-
+	}
+	@media(min-width:$screen-sm-min){
+		.logo {
+			font-size: 24px;
+			p {
+				padding-top: 15px;			
+			}
+		}
+	}
+	@media(min-width:$screen-md-min){
+		.logo {
+			font-size: 28px;
+			p {
+				padding-top: 15px;			
+			}
+		}
 	}
 }
 
 .arrow-mask {
 	background: url('../img/arrow-mask.png') no-repeat center center;
 	height: 30px;
-	margin-top: 570px;
+	margin-top: 620px;
 
 	@media (max-width: $screen-xs-max) {
 		margin-top: 370px;
@@ -204,7 +219,7 @@ header {
 			
 			#hex-1 {
 				position: absolute;
-				margin-top: 350px;
+				margin-top: 375px;
 				left: 10%;
 				width: 150px;
 				height: 150px;
@@ -214,7 +229,7 @@ header {
 
 			#hex-2 {
 				position: absolute;
-				margin-top: 350px;
+				margin-top: 375px;
 				right: 12%;
 				width: 200px;
 				height: 200px;
@@ -224,7 +239,7 @@ header {
 
 			#hex-3 {
 				position: absolute;
-				margin-top: 450px;
+				margin-top: 475px;
 				left: 30%;
 				width: 200px;
 				height: 200px;
@@ -234,7 +249,7 @@ header {
 
 			#hex-4 {
 				position: absolute;
-				margin-top: 375px;
+				margin-top: 400px;
 				right: 35%;
 				width: 125px;
 				height: 125px;
@@ -255,29 +270,29 @@ header {
 	height: 300px;
 	
 	&#hives {
-		background: $darkGrey url('../img/hives-sm.jpg') no-repeat;
+		background: $darkGrey url('../img/hives-sm.jpg') no-repeat center center;
 		@include background-size(cover);
 	}
 	&#bee-finger {
-		background: $darkGrey url('../img/bee-finger-sm.jpg') no-repeat;
+		background: $darkGrey url('../img/bee-finger-sm.jpg') no-repeat  center center;
 		@include background-size(cover);
 	}
 	&#men-at-work {
-		background: $darkGrey url('../img/men-at-work-sm.jpg') no-repeat;
+		background: $darkGrey url('../img/men-at-work-sm.jpg') no-repeat  center center;
 		@include background-size(cover);
 	}
 
 	@media (min-width: $screen-sm-min) {
 		&#hives {
-			background: $darkGrey url('../img/hives-lg.jpg') no-repeat;
+			background: $darkGrey url('../img/hives-lg.jpg') no-repeat center center;
 			@include background-size(cover);
 		}
 		&#bee-finger {
-			background: $darkGrey url('../img/bee-finger-lg.jpg') no-repeat;
+			background: $darkGrey url('../img/bee-finger-lg.jpg') no-repeat center center;
 			@include background-size(cover);
 		}
 		&#men-at-work {
-			background: $darkGrey url('../img/men-at-work-lg.jpg') no-repeat;
+			background: $darkGrey url('../img/men-at-work-lg.jpg') no-repeat center center;
 			@include background-size(cover);
 		}
 	}
@@ -464,6 +479,9 @@ nav {
 	a {
 		color: white;
 		text-decoration: none;
+	}
+	a:hover, a:focus {
+		color: $yellow;
 	}
 }
 
@@ -865,6 +883,21 @@ nav {
 		}
 		.item-details {
 			padding-top: 0 !important;
+		}
+	}
+	@media(min-width:$screen-sm-min){
+		.actions {
+			font-size: 12px;
+		}
+	}
+	@media(min-width:$screen-md-min){
+		.actions {
+			font-size: 14px;
+		}
+	}
+	@media(min-width:$screen-lg-min){
+		.actions {
+			font-size: 16px;
 		}
 	}
 }

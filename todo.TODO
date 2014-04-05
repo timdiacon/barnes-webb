@@ -18,23 +18,24 @@ BeeTasks:
   ✔ fix up email sign up @done (14-04-03 13:35)
   ✔ disable :hover for touch - converted to JS where nescessary @done (14-04-03 13:46)
   ✔ simplify hexagon parallax @done (14-04-03 14:21)
-  ☐ implement products via Google Spreadsheet
-  ☐ implement basic stock management
-  ☐ Implement Shop error message if Google down
-  ☐ implement quotes carousel
-  ☐ add in rollover animations
-  ☐ check if using .click() is bad idea...?
-  ☐ create a "Your Basket it Empty" page
-  ☐ crazy hexagon rollover shit
-
-Backlog:
-
-Bee MaybeTasks:
-  ☐ faq
+  ✔ implement products via Google Spreadsheet @done (14-04-05 09:58)
+  ✔ implement basic stock management @done (14-04-05 09:58)
+  ✔ implement quotes carousel @done (14-04-05 09:58)
+  ✔ Small bug on carousel if you close them all the last closed remains white @done (14-04-05 10:05)
+  ✔ Need to make the page scroll to fit in currently opened adoption pane @done (14-04-05 10:05)
   ✔ implement mobile friendly header @done (14-04-03 14:21)
-  ☐ add in routing
-  ☐ basic stock management via json (instock / out of stock)
+  ☐ faq
+  ☐ Fix parallax bug under accordion (is there update method)
+  ☐ create a "Your Basket it Empty" page
+  ☐ Implement Shop error message if Google down
+  ☐ add in rollover animations
+  ☐ crazy hexagon rollover shit
+  ☐ Make phone number link like Nic did previously
+  ☐ implement FastClick?
   ☐ Compass Sprite
+  ☐ add in routing
+  ☐ Grunt unique name for cache
+  ☐ Active states on menu
 
 Deploy:
   ☐ get ftp details
@@ -42,9 +43,3 @@ Deploy:
   ☐ get favicon
 
 Notes:
- ☐ Social sidebar is a bit shit
- ☐ removed underline from Phone Number as not a link
- ☐ Can I have all text in text file to copy paste
- ☐ Think image gallery in adoption is a bit overkill - either single image, or none
- ☐ Small bug on carousel if you close them all the last closed remains white
- ☐ Need to make the page scroll to fit in currently opened adoption pane

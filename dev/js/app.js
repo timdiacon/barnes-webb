@@ -3,6 +3,7 @@ var stickyMenuHeight = 50;
 var isShop = false;
 var basketVisible = false;
 var scrollDuration = 500;
+var mySkrollr;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
 
 $(document).ready(function(){
@@ -14,10 +15,10 @@ $(document).ready(function(){
 
 	// init OwlCarousel
 	$("#quote-carousel").owlCarousel({
-      autoPlay: false,
-      singleItem : true,
-      pagination: true
-  });
+		autoPlay: false,
+		singleItem : true,
+		pagination: true
+	});
 
 	// init simplecart
 	simpleCart({
@@ -44,12 +45,13 @@ $(document).ready(function(){
 	$.get( "https://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function( data ) {
 	  	var a = CSVToArray(data, ',');
 	  	a.splice(0, 1);
+	  	console.log(a);
 	  	populateShop(a);
 	});
 
 	// init the crazy parallax shit if we're not on mobile
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-	    skrollr.init({
+	    mySkrollr = skrollr.init({
 	        forceHeight: false,
 	        smoothScrolling: false
 	    });
@@ -126,7 +128,7 @@ function setupMainListeners(){
 		// add open class unless was already open
 		if(!$(this).parent().find('.panel-collapse').hasClass('in')){
 			$(this).parent().addClass('open');
-			$(this).find('.action').html('&#8211;');
+			$(this).find('.action').html('&#10005;');
 		}
 		scrollToOpenPanel($(this).parent());
 	});
@@ -136,6 +138,11 @@ function setupMainListeners(){
 		setTimeout(function () { 
 		    $('.menu-basket').addClass('flash');
 		}, 100);
+	});
+
+	// update the skrollr when accordion opens / closes
+	$('#adopt-accordion').on('hidden.bs.collapse shown.bs.collapse', function () {
+		mySkrollr.refresh($('#men-at-work'));
 	});
 
 
