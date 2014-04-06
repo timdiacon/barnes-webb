@@ -17,35 +17,34 @@ $(document).ready(function(){
 	$("#quote-carousel").slick({
 		autoplay: false,
 		centerMode: true,
-		centerPadding: 250,
+		centerPadding: 200,
 		arrows: false,
-		dots: true,
 		responsive: [
 		    {
-		    	breakpoint: 1185,
+		    	breakpoint: 1200,
 		    	settings: {
+		    		autoplay: false,
 		    		centerMode: true,
 		    		centerPadding: 200,
 		    		arrows: false,
-					dots: true,
 		    	}
 		    },
 		    {
 		    	breakpoint: 992,
 		    	settings: {
+		    		autoplay: false,
 		    		centerMode: true,
 		    		centerPadding: 100,
 		    		arrows: false,
-					dots: true,
 		    	}
 		    },
 		    {
 		    	breakpoint: 768,
 		    	settings: {
+		    		autoplay: false,
 		    		centerMode: true,
 		    		centerPadding: 25,
 		    		arrows: false,
-					dots: true,
 		    	}
 		    }
 		]

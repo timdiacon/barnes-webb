@@ -89,7 +89,9 @@ module.exports = function(grunt) {
 			main: {
 				files:[
 					{expand: true, flatten:true, src: ['dev/index.html'], dest: 'build/', filter: 'isFile'},
-					{expand: true, flatten:true, src: ['dev/img/*.svg'], dest: 'build/img', filter: 'isFile'}
+					{expand: true, flatten:true, src: ['dev/img/*.svg'], dest: 'build/img', filter: 'isFile'},
+					{expand: true, flatten:true, src: ['bower_components/slick-carousel/slick/fonts/*'], dest:'build/css/fonts/'},
+					{expand: true, flatten:true, src: ['bower_components/slick-carousel/slick/ajax-loader.gif'], dest:'build/css/'}
 				]
 			}
 		}
