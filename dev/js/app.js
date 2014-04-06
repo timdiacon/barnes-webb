@@ -14,10 +14,41 @@ $(document).ready(function(){
 
 
 	// init OwlCarousel
-	$("#quote-carousel").owlCarousel({
-		autoPlay: false,
-		singleItem : true,
-		pagination: true
+	$("#quote-carousel").slick({
+		autoplay: false,
+		centerMode: true,
+		centerPadding: 250,
+		arrows: false,
+		dots: true,
+		responsive: [
+		    {
+		    	breakpoint: 1185,
+		    	settings: {
+		    		centerMode: true,
+		    		centerPadding: 200,
+		    		arrows: false,
+					dots: true,
+		    	}
+		    },
+		    {
+		    	breakpoint: 992,
+		    	settings: {
+		    		centerMode: true,
+		    		centerPadding: 100,
+		    		arrows: false,
+					dots: true,
+		    	}
+		    },
+		    {
+		    	breakpoint: 768,
+		    	settings: {
+		    		centerMode: true,
+		    		centerPadding: 25,
+		    		arrows: false,
+					dots: true,
+		    	}
+		    }
+		]
 	});
 
 	// init simplecart
@@ -45,7 +76,6 @@ $(document).ready(function(){
 	$.get( "https://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function( data ) {
 	  	var a = CSVToArray(data, ',');
 	  	a.splice(0, 1);
-	  	console.log(a);
 	  	populateShop(a);
 	});
 

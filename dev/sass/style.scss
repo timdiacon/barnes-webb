@@ -377,28 +377,31 @@ header {
 
 #quote-carousel {
 	.item {
-		text-align: center;
-		font-size: 30px;
-		font-style: italic;
-		
-		.quote {
-			padding: 30px 0 20px 0;
-		}
+		.content {
+			margin: 0 10px;
+			text-align: center;
+			font-size: 30px;
+			font-style: italic;
+			
+			.quote {
+				padding: 30px 0 20px 0;
+			}
 
-		.quotee {
-			color: $mustard;
-			padding-bottom: 10px;
-			font-size: 25px;
-		}
-
-		img {
-			display: block;
-			width: 100%;
-		}
-		@media(max-width:$screen-xs-max){
-			font-size: 20px;
 			.quotee {
-				font-size: 15px;
+				color: $mustard;
+				padding-bottom: 10px;
+				font-size: 25px;
+			}
+
+			img {
+				display: inline-block;
+				width: 100%;
+			}
+			@media(max-width:$screen-xs-max){
+				font-size: 20px;
+				.quotee {
+					font-size: 15px;
+				}
 			}
 		}
 	}
