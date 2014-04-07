@@ -32,15 +32,15 @@ BeeTasks:
   ✔ Fix shop rollovers @done (14-04-07 09:51)
   ✔ add in rollover animations @done (14-04-07 10:35)
   ✔ implement FastClick? @done (14-04-07 10:47)
-  ☐ faq
-  ☐ crazy hexagon rollover shit
+  ✔ faq @done (14-04-07 10:54)
+  ✔ Retinise all image sizes @done (14-04-07 10:54)
+  ✔ Make logo hide shop / basket @done (14-04-07 10:54)
+  ✔ Create retina shop rollover image @done (14-04-07 11:44)
+  ☐ Implement "Sold Out" display
+  ☐ Active states on menu
   ☐ Compass Sprite
   ☐ add in routing
-  ☐ Active states on menu
-  ☐ Make logo hide shop / basket
-  ☐ Create retina shop rollover image
-  ☐ Retinise all image sizes
-  ☐ Implement "Sold Out" display
+  ☐ crazy hexagon rollover shit
 
 Deploy:
   ☐ get ftp details
