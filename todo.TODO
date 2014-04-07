@@ -29,14 +29,18 @@ BeeTasks:
   ✔ Grunt unique name for cache @done (14-04-05 12:00)
   ✔ create a "Your Basket it Empty" page @done (14-04-07 09:15)
   ✔ Implement Shop error message if Google down @done (14-04-07 09:24)
+  ✔ Fix shop rollovers @done (14-04-07 09:51)
+  ✔ add in rollover animations @done (14-04-07 10:35)
+  ✔ implement FastClick? @done (14-04-07 10:47)
   ☐ faq
-  ☐ Fix shop rollovers
-  ☐ add in rollover animations
   ☐ crazy hexagon rollover shit
-  ☐ implement FastClick?
   ☐ Compass Sprite
   ☐ add in routing
   ☐ Active states on menu
+  ☐ Make logo hide shop / basket
+  ☐ Create retina shop rollover image
+  ☐ Retinise all image sizes
+  ☐ Implement "Sold Out" display
 
 Deploy:
   ☐ get ftp details
@@ -44,3 +48,15 @@ Deploy:
   ☐ get favicon
 
 Notes:
+ ☐ Had to add small drop shadow to sticky social so visible on lighter backgrounds
+ ☐ Put the king bee in but the jump is still visible as the gap would need to be big enough to push the parallax image below the fold
+ ☐ Need Bee-Bullet on a white background with a height of 20px (does it just look like mush at that size) - have stick a circle in there for now, decreased font size slightly and added a little extra padding
+
+Image Sizes:
+ ☐ Adoption accordion 760*760
+ ☐ Quotes carousel 1500*750
+ ☐ Shop Images 700*700
+ ☐ Parallax image large 1200*800
+ ☐ Parallax image small 800*533
+ ☐ Main header image large 1600*1100
+ ☐ Main header image small 800*600

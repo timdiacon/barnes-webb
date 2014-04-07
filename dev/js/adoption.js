@@ -3,7 +3,7 @@ var adoptionPlans = [
 	{
 		item_price:'&pound;25',
 		item_name:'Thyme',
-		item_pic:'http://placehold.it/500x500',
+		item_pic:'http://placehold.it/760x760',
 		qty: '1000',
 		contents: [
 			'A personalised certificate',
@@ -15,7 +15,7 @@ var adoptionPlans = [
 	{
 		item_price:'&pound;50',
 		item_name:'Poppy',
-		item_pic:'http://placehold.it/500x500',
+		item_pic:'http://placehold.it/760x760',
 		qty: '5000',
 		contents: [
 			'A personalised certificate',
@@ -29,7 +29,7 @@ var adoptionPlans = [
 	{
 		item_price:'&pound;85',
 		item_name:'Sunflower',
-		item_pic:'http://placehold.it/500x500',
+		item_pic:'http://placehold.it/760x760',
 		qty: '10,000',
 		contents: [
 			'A personalised certificate',
@@ -44,7 +44,7 @@ var adoptionPlans = [
 	{
 		item_price:'&pound;250',
 		item_name:'Cherry',
-		item_pic:'http://placehold.it/500x500',
+		item_pic:'http://placehold.it/760x760',
 		qty: '30,000',
 		contents: [
 			'A personalised certificate',
@@ -60,7 +60,7 @@ var adoptionPlans = [
 	{
 		item_price:'&pound;500',
 		item_name:'Willow',
-		item_pic:'http://placehold.it/500x500',
+		item_pic:'http://placehold.it/760x760',
 		qty: '60,000',
 		contents: [
 			'A personalised certificate',

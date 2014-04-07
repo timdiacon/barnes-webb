@@ -20,6 +20,7 @@
     "skrollr": "~0.6.21",
     "simplecart-js": "*",
     "transparency": "~0.9.14",
-    "slick-carousel": "~1.3.3"
+    "slick-carousel": "~1.3.3",
+    "fastclick": "~1.0.1"
   }
 }

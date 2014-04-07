@@ -3,6 +3,7 @@
 @import "compass/css3/background-size";
 @import "compass/css3/transition";
 @import "compass/css3/transform";
+@import "compass/css3/filter";
 @import "animation";
 
 body {
@@ -339,8 +340,16 @@ header {
 					color: $mustard;
 					margin-bottom: 10px;
 				}
-				li {
-					padding: 5px 0;
+				ul {
+					margin-left: 20px;
+					margin-bottom: 30px;
+
+					li {
+						padding: 7px 0;
+						list-style-type: circle;
+						list-style-color: $mustard;
+						font-size: 16px;
+					}
 				}
 				.image img {
 					width: 100%;
@@ -366,10 +375,13 @@ header {
 						display: none;
 					}
 				} 
-
 			}
-
 		}
+	}
+
+	.king-bee {
+		height: 250px;
+		background: url('../img/king-bee.gif') no-repeat center center;
 	}
 }
 
@@ -445,7 +457,9 @@ header {
 	margin-right: 10px;
 }
 */
-
+.btn-default {
+	@include transition(background, 0.2s);
+}
 .btn-default:hover {
 	background: $yellow;
 }
@@ -725,6 +739,7 @@ nav {
 #footer-social {
 	margin-bottom: 20px;
 	a {
+		@include transition(opacity, 0.2s);
 		opacity: 0.5;
 		padding: 0 10px;
 		img {
@@ -734,7 +749,6 @@ nav {
 	}
 	a:hover {
 		opacity: 1;
-		@include transition(opacity, 0.2s);
 	}
 }
 
@@ -793,7 +807,7 @@ nav {
 
 				&.hover {
 					@include transition(opacity, 0.2s);
-					opacity: 1;
+					opacity: .8;
 				}
 			}
 		}
@@ -935,15 +949,23 @@ nav {
 
 #sticky-social {
 	position: fixed;
-	bottom: 20px;
+	bottom: 70px;
 	right:10px;
-	width: 40px;
-	height: 140px;
+	width: 30px;
+	height: 100px;
 
 	.social-icon {
-		width: 40px;
-		height: 40px;
+		@include filter(drop-shadow(0px 0px 2px rgba(0,0,0,0.5)));
+		opacity: 0.7;
+		width: 30px;
+		height: 30px;
 		margin-bottom: 5px;
+	}
+
+	a {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
 	}
 
 	#fb {

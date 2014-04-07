@@ -9,6 +9,7 @@ stickyThreshold = parseInt($('#intro').css('height'), 10);
 $(document).ready(function(){
 	console.log("Release The Bees!");
 	
+	// populate the adoption plans using Transparency.js
 	$('#adopt-accordion').render(adoptionPlans, directives);
 	setupMainListeners();
 
@@ -90,6 +91,9 @@ $(document).ready(function(){
 	    });
 	}
 
+	// init Fastclick
+	FastClick.attach(document.body);
+
 	//displayShop();
 	//displayBasket();
 
@@ -107,8 +111,8 @@ function setupMainListeners(){
 		return false;
 	});
 
-	// detect if we need to display the sticky menu
 	$(window).scroll(function(){
+		// detect if we need to display the sticky menu
 		if(!isShop)updateSticky();
 	});
 
@@ -141,16 +145,9 @@ function setupMainListeners(){
 	});
 
 	$('#sticky-menu .logo').click(function(){
+		hideShop();
+		hideBasket();
 		$('html, body').animate({scrollTop: 0}, scrollDuration);
-	});
-
-	// adding rollover behaviour via js as goes funny on mobile when using css :hover
-	$('#shop .simpleCart_shelfItem .header .over').mouseover(function(){
-		$(this).addClass('hover');
-	});
-
-	$('#shop .simpleCart_shelfItem .header .over').mouseout(function(){
-		$(this).removeClass('hover');
 	});
 
 	$('#adopt-accordion .panel-heading').click(function(){
@@ -314,6 +311,15 @@ function populateShop(p){
 		}
 	});
 	$('#product-list').html(html);
+
+	// adding rollover behaviour via js as goes funny on mobile when using css :hover
+	$('#shop .simpleCart_shelfItem .header .over').mouseover(function(){
+		$(this).addClass('hover');
+	});
+
+	$('#shop .simpleCart_shelfItem .header .over').mouseout(function(){
+		$(this).removeClass('hover');
+	});
 }
 
 // Thank you Mr Mulhoony-pants

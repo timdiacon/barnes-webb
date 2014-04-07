@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 		// INIT
 		bowerInstall: {
 	    	target: {
-	    		src: 'dev/index.html'
+	    		src: 'dev/index.html',
+	    		exclude: ['slick-carousel']
 	    	}
 	    },
 
