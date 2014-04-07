@@ -27,9 +27,10 @@ BeeTasks:
   ✔ Fix parallax bug under accordion (is there update method) @done (14-04-05 11:04)
   ✔ Make phone number link like Nic did previously @done (14-04-05 11:30)
   ✔ Grunt unique name for cache @done (14-04-05 12:00)
+  ✔ create a "Your Basket it Empty" page @done (14-04-07 09:15)
+  ✔ Implement Shop error message if Google down @done (14-04-07 09:24)
   ☐ faq
-  ☐ create a "Your Basket it Empty" page
-  ☐ Implement Shop error message if Google down
+  ☐ Fix shop rollovers
   ☐ add in rollover animations
   ☐ crazy hexagon rollover shit
   ☐ implement FastClick?
