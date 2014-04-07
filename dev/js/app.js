@@ -13,7 +13,7 @@ $(document).ready(function(){
 	setupMainListeners();
 
 
-	// init OwlCarousel
+	// init Slick Slider
 	$("#quote-carousel").slick({
 		autoplay: false,
 		centerMode: true,
@@ -70,6 +70,7 @@ $(document).ready(function(){
 			}}
 		]
 	});
+	updateCartDisplay();
 	
 	// load the products for the shop
 	$.get( "https://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function( data ) {
@@ -87,7 +88,7 @@ $(document).ready(function(){
 	}
 
 	//displayShop();
-	//displayBasket();
+	displayBasket();
 
 });
 
@@ -167,6 +168,10 @@ function setupMainListeners(){
 		setTimeout(function () { 
 		    $('.menu-basket').addClass('flash');
 		}, 100);
+	});
+
+	simpleCart.bind('update', function(){
+		updateCartDisplay();
 	});
 
 	// update the skrollr when accordion opens / closes
@@ -274,6 +279,17 @@ function hideBasket(){
 	$('#basket').css('display', 'none');
 	$('#products, #basket-container').css('display', 'block');
 	basketVisible = false;
+}
+
+// check if we need to display "Cart Empty" message
+function updateCartDisplay(){
+	if( simpleCart.quantity() === 0 ){
+		$('#basket .summary, #empty-basket, #checkout').addClass('hidden');
+		$('#basket .empty-message').addClass('visible');
+	} else {
+		$('#basket .summary, #empty-basket, #checkout').removeClass('hidden');
+		$('#basket .empty-message').removeClass('visible');
+	}
 }
 
 function populateShop(p){

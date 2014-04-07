@@ -883,6 +883,13 @@ nav {
 		}
 	}
 
+	.empty-message {
+		display: none;
+		&.visible {
+			display: block;
+		}
+	}
+
 	#checkout {
 		span {
 			background: $yellow;
