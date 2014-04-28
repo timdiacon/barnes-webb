@@ -1,10 +1,12 @@
 var stickyOpen = false;
-var stickyMenuHeight = 50;
+var stickyMenuHeight = 60;
 var isShop = false;
 var basketVisible = false;
-var scrollDuration = 500;
+var scrollDuration = 750;
+var anchorPeak = 250;
 var mySkrollr;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
+jQuery.easing.def = "easeOutExpo";
 
 $(document).ready(function(){
 	console.log("Release The Bees!");
@@ -153,12 +155,12 @@ function setupMainListeners(){
 	$('#adopt-accordion .panel-heading').click(function(){
 		$('#adopt-accordion .panel').each(function(i, o){
 			$(o).removeClass("open");
-			$(o).find('.panel-heading .action').html('+');
+			$(o).find('.panel-heading .action .cross').removeClass('rotated');
 		});
 		// add open class unless was already open
 		if(!$(this).parent().find('.panel-collapse').hasClass('in')){
 			$(this).parent().addClass('open');
-			$(this).find('.action').html('&#10005;');
+			$(this).find('.action .cross').addClass('rotated');
 		}
 		scrollToOpenPanel($(this).parent());
 	});
@@ -213,15 +215,15 @@ function onMenu(section, duration){
 	switch(section){
 		case 'rent':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#rent").offset().top - stickyMenuHeight}, duration);
+			$('html, body').animate({scrollTop: $("#rent").offset().top - stickyMenuHeight - anchorPeak}, duration);
 			break;
 		case 'adopt':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#adopt").offset().top - stickyMenuHeight}, duration);
+			$('html, body').animate({scrollTop: $("#adopt").offset().top - stickyMenuHeight - anchorPeak}, duration);
 			break;
 		case 'about':
 			if(isShop) hideShop();
-			$('html, body').animate({scrollTop: $("#about-us").offset().top - stickyMenuHeight}, duration);
+			$('html, body').animate({scrollTop: $("#about-us").offset().top - stickyMenuHeight - anchorPeak}, duration);
 			break;
 		case 'contact':
 			if(isShop) hideShop();

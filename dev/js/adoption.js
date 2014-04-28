@@ -22,7 +22,7 @@ var adoptionPlans = [
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
-			'A jar of London postcode honey &#42;'
+			'A jar of London postcode honey&#42;'
 		],
 		disclaimer: true
 	},
@@ -37,7 +37,7 @@ var adoptionPlans = [
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A &#8216;Save the Bees&#8217; tote bag',
-			'2 jars of London postcode honey &#42;'
+			'2 jars of London postcode honey&#42;'
 		],
 		disclaimer: true
 	},
@@ -52,7 +52,7 @@ var adoptionPlans = [
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A &#8216;Save the Bees&#8217; tote bag',
-			'4 jars of London postcode honey &#42;',
+			'4 jars of London postcode honey&#42;',
 			'Visits to your adopted hive upon arrangement'
 		],
 		disclaimer: true
@@ -68,7 +68,7 @@ var adoptionPlans = [
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A &#8216;Save the Bees&#8217; tote bag',
-			'8 jars of London postcode honey &#42;',
+			'8 jars of London postcode honey&#42;',
 			'Visits to your adopted hive upon arrangement',
 			'Your name / company name permanently displayed on the hive on a plaque'
 		],
@@ -84,11 +84,11 @@ var directives = {
 			var s = '<div class="panel-heading container header">';
 					s += '<a data-toggle="collapse" data-parent="#adopt-accordion" href="#'+ this.item_name+'">';
 						s += '<div class="price col-xs-2 item_price">'+ this.item_price +'</div>';
-						s += '<div class="col-xs-8">';
+						s += '<div class="col-xs-9">';
 							s += '<span class="title item_name">'+ this.item_name +'</span>';
-							s += '<span class="details">('+ this.qty +') Bees</span>';
+							s += '<span class="details">('+ this.qty +' Bees)</span>';
 						s += '</div>';
-						s += '<div class="action col-xs-2">+</div>';
+						s += '<div class="action col-xs-1"><div class="cross"></div></div>';
 					s += '</a>';
 				s += '</div>';
 				// body
