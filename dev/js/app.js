@@ -166,10 +166,11 @@ function setupMainListeners(){
 	});
 	
 	simpleCart.bind( 'afterAdd' , function( item ){
-		$('.menu-basket').removeClass('flash');
-		setTimeout(function () { 
-		    $('.menu-basket').addClass('flash');
-		}, 100);
+		// $('.menu-basket').removeClass('flash');
+		// setTimeout(function () { 
+		//     $('.menu-basket').addClass('flash');
+		// }, 100);
+		displayBasket();
 	});
 
 	simpleCart.bind('update', function(){
