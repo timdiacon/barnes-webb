@@ -238,45 +238,42 @@ header {
 	
 		#hexagons {
 			position: relative;
+			.hex {
+				position: absolute;
+
+				img {
+					width: 100%;
+				}
+			}
 			
 			#hex-1 {
-				position: absolute;
 				margin-top: 375px;
 				left: 10%;
 				width: 150px;
-				height: 150px;
-				background: url('../img/hex-1.png') no-repeat center center;
-				background-size: 100%;
 			}
 
 			#hex-2 {
-				position: absolute;
 				margin-top: 375px;
-				right: 12%;
+				left: 25%;
 				width: 200px;
-				height: 200px;
-				background: url('../img/hex-2.png') no-repeat center center;
-				background-size: 100%;
 			}
 
 			#hex-3 {
-				position: absolute;
 				margin-top: 475px;
-				left: 30%;
-				width: 200px;
-				height: 200px;
-				background: url('../img/hex-3.png') no-repeat center center;
-				background-size: 100%;
+				left: 40%;
+				width: 120px;
 			}
 
 			#hex-4 {
-				position: absolute;
 				margin-top: 400px;
 				right: 35%;
 				width: 125px;
-				height: 125px;
-				background: url('../img/hex-4.png') no-repeat center center;
-				background-size: 100%;
+			}
+
+			#hex-5 {
+				margin-top: 400px;
+				right: 15%;
+				width: 140px;
 			}
 
 			@media (max-width: $screen-xs-max) {
@@ -292,11 +289,11 @@ header {
 	height: 300px;
 	
 	&#hives {
-		background: $darkGrey url('../img/hives-sm.jpg') no-repeat center center;
+		background: $darkGrey url('../img/bees-hive-sm.jpg') no-repeat center center;
 		@include background-size(cover);
 	}
 	&#bee-finger {
-		background: $darkGrey url('../img/bee-finger-sm.jpg') no-repeat  center center;
+		background: $darkGrey url('../img/honeycomb-bees-sm.jpg') no-repeat  center center;
 		@include background-size(cover);
 	}
 	&#men-at-work {
@@ -306,11 +303,11 @@ header {
 
 	@media (min-width: $screen-sm-min) {
 		&#hives {
-			background: $darkGrey url('../img/hives-lg.jpg') no-repeat center center;
+			background: $darkGrey url('../img/bees-hive-lg.jpg') no-repeat center center;
 			@include background-size(cover);
 		}
 		&#bee-finger {
-			background: $darkGrey url('../img/bee-finger-lg.jpg') no-repeat center center;
+			background: $darkGrey url('../img/honeycomb-bees-sm.jpg') no-repeat center center;
 			@include background-size(cover);
 		}
 		&#men-at-work {
@@ -335,11 +332,11 @@ header {
 			background: $midGrey;
 			&.open {
 				background: white;
-				.panel-heading {
+				.header {
 					background: white;
 				}
 			}
-			.panel-heading {
+			.header {
 				padding: 10px 0;
 				a {
 					color: $darkGrey;
@@ -363,6 +360,7 @@ header {
 					color: $newGrey;
 				}
 				.cross {
+					float: right;
 					width: 15px;
 					height: 15px;
 					margin-top: 20px;
@@ -374,7 +372,15 @@ header {
 					@include transition(transform, 0.3s);
 				}
 			}
-			.panel-body {
+			.plan-body {
+				@include transition(height, 0.5s);
+
+				&.collapsed {
+					min-height: 0;
+					overflow: hidden;
+					height: 0px !important;
+					@include transition(height, 0.5s);
+				}
 				text-align: left;
 
 				.title {
@@ -412,7 +418,7 @@ header {
 				.panel-heading {
 					font-size: 16px;
 				}
-				.panel-body {
+				.plan-body {
 					font-size: 16px;	
 					.image {
 						display: none;
@@ -913,6 +919,11 @@ nav {
 	width: 100%;
 	background: $lightGrey;
 	display: none;
+
+	&.visible {
+		display: block;
+		@include animation(alpha-in .25s null null null forwards);
+	}
 
 	.left {
 		text-align: left;

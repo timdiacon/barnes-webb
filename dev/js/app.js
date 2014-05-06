@@ -13,6 +13,7 @@ $(document).ready(function(){
 	
 	// populate the adoption plans using Transparency.js
 	$('#adopt-accordion').render(adoptionPlans, directives);
+	setAccordionHeights();
 	setupMainListeners();
 
 	// init Slick Slider
@@ -50,6 +51,10 @@ $(document).ready(function(){
 		    	}
 		    }
 		]
+	});
+	$('#quote-carousel img').click(function(){
+		console.log('poop');
+		$("#quote-carousel").slickGoTo(1)
 	});
 
 	// init simplecart
@@ -152,17 +157,15 @@ function setupMainListeners(){
 		$('html, body').animate({scrollTop: 0}, scrollDuration);
 	});
 
-	$('#adopt-accordion .panel-heading').click(function(){
-		$('#adopt-accordion .panel').each(function(i, o){
-			$(o).removeClass("open");
-			$(o).find('.panel-heading .action .cross').removeClass('rotated');
+	$('#adopt-accordion .header').click(function(){
+		console.log("click");
+		$('#adopt-accordion .plan-body').each(function(i, o){
+			$(o).addClass("collapsed");
+			$(o).find('.header .action .cross').removeClass('rotated');
 		});
-		// add open class unless was already open
-		if(!$(this).parent().find('.panel-collapse').hasClass('in')){
-			$(this).parent().addClass('open');
-			$(this).find('.action .cross').addClass('rotated');
-		}
-		scrollToOpenPanel($(this).parent());
+		$(this).siblings().removeClass('collapsed');
+
+		//scrollToOpenPanel($(this).parent());
 	});
 	
 	simpleCart.bind( 'afterAdd' , function( item ){
@@ -181,7 +184,6 @@ function setupMainListeners(){
 	$('#adopt-accordion').on('hidden.bs.collapse shown.bs.collapse', function () {
 		mySkrollr.refresh($('#men-at-work'));
 	});
-
 
 }
 
@@ -248,9 +250,14 @@ function scrollToOpenPanel(item){
 function displayShop(){
 	if(basketVisible){
 		hideBasket();
+		$('#shop').removeClass('visible');
 	}
 	$('#shop').removeClass('hidden');
-	$('#shop').addClass('visible');
+	// use timeout to force the class to be removed then added back when coming from basket
+	setTimeout(function () { 
+		$('#shop').addClass('visible');
+	}, 0);
+
 	$('#main').removeClass('visible');
 	$('#main').addClass('hidden');
 
@@ -273,13 +280,13 @@ function displayBasket(){
 	if(!isShop){
 		displayShop();
 	}
-	$('#basket').css('display', 'block');
+	$('#basket').addClass('visible');
 	$('#products, #basket-container').css('display', 'none');
 	basketVisible = true;	
 }
 
 function hideBasket(){
-	$('#basket').css('display', 'none');
+	$('#basket').removeClass('visible');
 	$('#products, #basket-container').css('display', 'block');
 	basketVisible = false;
 }
@@ -322,6 +329,13 @@ function populateShop(p){
 
 	$('#shop .simpleCart_shelfItem .header .over').mouseout(function(){
 		$(this).removeClass('hover');
+	});
+}
+
+function setAccordionHeights(){
+	$('#adopt .plan-body').each(function(){
+		var h = $(this).height();
+        $(this).height(h).addClass('collapsed');
 	});
 }
 

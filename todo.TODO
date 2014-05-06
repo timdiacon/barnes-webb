@@ -36,8 +36,13 @@ BeeTasks:
   ✔ Retinise all image sizes @done (14-04-07 10:54)
   ✔ Make logo hide shop / basket @done (14-04-07 10:54)
   ✔ Create retina shop rollover image @done (14-04-07 11:44)
-  ☐ Create custom bootstrap without all the crap
+  ✔ Mobile added to basket confirmation / link to checkout @done (14-04-29 13:42)
   ☐ Implement "Sold Out" display
+  ☐ Parallax bug?
+  ☐ Carousel bug when returning via home logo?
+  ☐ Create custom bootstrap without all the crap
+  ☐ Can we style browser email validation?
+  ☐ Fix accordion symbol bug
   ☐ Active states on menu
   ☐ Compass Sprite
   ☐ add in routing
