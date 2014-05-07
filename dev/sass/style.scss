@@ -325,23 +325,27 @@ header {
 
 #adopt {
 	#adopt-accordion {
-		margin-top: 50px;
+		margin-top: 0px;
 		.panel {
 			border: none;
 			margin: 0;
 			background: $midGrey;
-			&.open {
-				background: white;
-				.header {
-					background: white;
-				}
-			}
+
 			.header {
 				padding: 10px 0;
+				margin-bottom: 0px;
+				padding-left:70px;
+				padding-right:70px;
+				// border-bottom: 1px solid transparent;
 				a {
 					color: $darkGrey;
 					text-decoration: none;
 				}	
+				cursor:pointer;
+				&:hover{
+					// background: lighten($midGrey, 1%);
+					// border-bottom: 1px solid #CCC;
+				}
 				text-align: left;
 				font-size: 24px;
 				line-height: 60px;
@@ -373,16 +377,15 @@ header {
 				}
 			}
 			.plan-body {
-				@include transition(height, 0.5s);
-
-				&.collapsed {
-					min-height: 0;
-					overflow: hidden;
-					height: 0px !important;
-					@include transition(height, 0.5s);
-				}
+				@include transition(max-height 0.5s ease-out, margin-top 0.5s ease-out);
+				max-height: 0;
+				overflow: hidden;
 				text-align: left;
-
+				// display:none;
+				visibility:hidden;
+				padding-left:70px;
+				padding-right:70px;
+				margin-top:0px;
 				.title {
 					font-size: 16px;
 					color: $mustard;
@@ -413,19 +416,41 @@ header {
 				}
 
 			}
-			
+			&.open {
+				background: white;
+				
+				.header {
+					background: white;
+				}
+				.plan-body{
+					margin-top:50px;
+					visibility:visible;
+					max-height: 640px;
+				}
+			}
 			@media(max-width: $screen-xs-max){
 				.panel-heading {
 					font-size: 16px;
 				}
 				.plan-body {
-					font-size: 16px;	
+					font-size: 16px;
+					padding-left:20px;
+					padding-right:20px;
+					font-size: 0.75em;
 					.image {
 						display: none;
 					}
 				}
 				.col-xs-9 {
 					padding: 0 10px;
+				}
+				.header{
+					padding-left:20px;
+					padding-right:20px;
+					font-size: 0.75em;
+				}
+				.btn{
+					font-size: 1em !important;
 				}
 			}
 		}
@@ -772,6 +797,7 @@ nav {
 	
 	.input-holder {
 		margin: 20px 0 50px 0;
+		margin-top:0;
 	}
 
 	h3 {
@@ -795,6 +821,11 @@ nav {
 			margin: 0;
 			font-weight: 500;
 			-webkit-font-smoothing: antialiased;
+			@include transition(background 0.3s ease-out);
+			&:hover{
+				@include transition(background 0s ease-out);
+				background: darken($mustard, 3%);
+			}
 		}
 		padding-bottom: 20px;
 	}
@@ -905,7 +936,7 @@ nav {
 
 	@media (max-width: $screen-xs-max) {
 		.row .intro {
-			display: none;
+			// display: none;
 		}
 	}
 }

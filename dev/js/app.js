@@ -2,7 +2,7 @@ var stickyOpen = false;
 var stickyMenuHeight = 60;
 var isShop = false;
 var basketVisible = false;
-var scrollDuration = 750;
+var scrollDuration = 1250;
 var anchorPeak = 250;
 var mySkrollr;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
@@ -13,7 +13,7 @@ $(document).ready(function(){
 	
 	// populate the adoption plans using Transparency.js
 	$('#adopt-accordion').render(adoptionPlans, directives);
-	setAccordionHeights();
+	// setAccordionHeights();
 	setupMainListeners();
 
 	// init Slick Slider
@@ -92,10 +92,12 @@ $(document).ready(function(){
 
 	// init the crazy parallax shit if we're not on mobile
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+	    
 	    mySkrollr = skrollr.init({
 	        forceHeight: false,
 	        smoothScrolling: false
 	    });
+	    // console.log(mySkrollr);
 	}
 
 	// init Fastclick
@@ -139,8 +141,13 @@ function setupMainListeners(){
 		hideBasket();
 	});
 
+
 	$('#empty-basket').click(function(){
 		simpleCart.empty();
+	});
+
+	$('.signup').click(function(){
+		onMenu('contact', scrollDuration);
 	});
 
 	$('#find-out-more-btn').click(function(){
@@ -158,14 +165,17 @@ function setupMainListeners(){
 	});
 
 	$('#adopt-accordion .header').click(function(){
-		console.log("click");
-		$('#adopt-accordion .plan-body').each(function(i, o){
-			$(o).addClass("collapsed");
-			$(o).find('.header .action .cross').removeClass('rotated');
-		});
-		$(this).siblings().removeClass('collapsed');
+		var isOpen = $(this).parents(".panel").hasClass("open");
+		$("#adopt-accordion .panel").removeClass("open");
 
-		//scrollToOpenPanel($(this).parent());
+		$(this).parents(".panel").toggleClass("open", !isOpen);
+		// $('#adopt-accordion .plan-body').each(function(i, o){
+		// 	$(o).addClass("collapsed");
+		// 	$(o).find('.header .action .cross').removeClass('rotated');
+		// });
+		// $(this).siblings().removeClass('collapsed');
+
+		scrollToOpenPanel($(this).parents(".panel"));
 	});
 	
 	simpleCart.bind( 'afterAdd' , function( item ){
@@ -314,7 +324,7 @@ function populateShop(p){
 					html += '</div>';
 					html += '<div class="details">';
 						html += '<span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span>';
-						html += '<div class="add-to-basket">Add to Basket</div>';
+						html += '<div class="add-to-basket">Sold out - available soon</div>';
 					html += '</div>';
 				html += '</a>';
 			html += '</div>';

@@ -1,0 +1,44 @@
+GENERAL:
+
+☐ at one of the breakpoints the logo disappears from the nav so no way to link back to the homepage. 
+Tim: we could squash the space between the navigation links.
+
+RENT:
+ ☐ can clicking an image also make it slide please?
+   Tim: It should be but I can’t seem to make it work. Might be something to do with the infinite looping? Will have to leave that one with me.
+ ✔ got new hexagon images - attached. @done (14-05-07 21:38)
+ ✔ swap FAQ link to the attached PDF @done (14-05-07 21:40)
+
+ADOPT:
+
+ ✔ New main image attached @done (14-05-07 21:40)
+ ✔ Move “Choose a plan to see more” closer to accordion - see adopt4.png @done (14-05-07 21:43)
+ ☐ Add more space above “You will receive:” - see adopt1.png
+ ☐ left align prices with adopt copy above it - see adopt1.png
+   Tim Still need to sort this - doing so will also fix the rounded corner problem.
+ ☐ sometimes no content loads when clicking an adoption option?
+ ☐ remove rounded corners from expanded accordion large white box
+   Tim: Will fix with text alignment thingy
+ ☐ can we have a modal (or something) for enlarged image when clicking adoption images to show a more detailed image?
+ ☐ Change “Adopt bees now” button to to “available soon”
+
+ABOUT:
+
+ ☐ New main image attached
+
+CONTACT:
+
+ ☐ Move “Keep up to date with what we…” closer to form field
+ ☐ Give SEND button a rollover state of #5a5a52
+
+SHOP:
+
+ ☐ “Our 2014 honey harvest will be available from Sept. Sign up to our newsletter to get notified when it's ready.” (Links through to contact page or add form fields in here too?)
+ ☐ “Ship to UK only” - How control this?
+ ☐ Modal pop up? More images. 
+ ☐ Implement 'sold out' / 'coming soon'
+
+
+BASKET:
+
+ ☐ ‘ By pressing submit you agree to our terms and conditions' - Do we need something like this? Best practice and all that. Could then automatically get peeps signed up to our newsletter. 
