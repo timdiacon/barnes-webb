@@ -52,10 +52,12 @@ $(document).ready(function(){
 		    }
 		]
 	});
+
+	/* TODO fix this - it doesn't work for some reason?
 	$('#quote-carousel img').click(function(){
-		console.log('poop');
 		$("#quote-carousel").slickGoTo(1)
 	});
+	*/
 
 	// init simplecart
 	simpleCart({
@@ -212,7 +214,6 @@ function validate(email){
 }
 
 function onMenu(section, duration){
-	// TODO would be better to jump to scroll pos if shop rather than animate
 	switch(section){
 		case 'rent':
 			if(isShop) hideShop();
