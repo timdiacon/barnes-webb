@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		bowerInstall: {
 	    	target: {
 	    		src: 'dev/index.html',
-	    		exclude: ['slick-carousel','bootstrap']
+	    		exclude: ['slick-carousel']
 	    	}
 	    },
 
