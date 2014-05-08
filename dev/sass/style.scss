@@ -332,11 +332,11 @@ header {
 			background: $midGrey;
 			&.open {
 				background: white;
-				.header {
+				.panel-heading {
 					background: white;
 				}
 			}
-			.header {
+			.panel-heading {
 				padding: 10px 0;
 				a {
 					color: $darkGrey;
@@ -372,15 +372,7 @@ header {
 					@include transition(transform, 0.3s);
 				}
 			}
-			.plan-body {
-				@include transition(height, 0.5s);
-
-				&.collapsed {
-					min-height: 0;
-					overflow: hidden;
-					height: 0px !important;
-					@include transition(height, 0.5s);
-				}
+			.panel-body {
 				text-align: left;
 
 				.title {
@@ -418,7 +410,7 @@ header {
 				.panel-heading {
 					font-size: 16px;
 				}
-				.plan-body {
+				.panel-body {
 					font-size: 16px;	
 					.image {
 						display: none;

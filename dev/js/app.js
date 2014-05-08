@@ -157,22 +157,20 @@ function setupMainListeners(){
 		$('html, body').animate({scrollTop: 0}, scrollDuration);
 	});
 
-	$('#adopt-accordion .header').click(function(){
-		console.log("click");
-		$('#adopt-accordion .plan-body').each(function(i, o){
-			$(o).addClass("collapsed");
-			$(o).find('.header .action .cross').removeClass('rotated');
-		});
-		$(this).siblings().removeClass('collapsed');
-
-		//scrollToOpenPanel($(this).parent());
+	$('#adopt-accordion .panel-heading').click(function(){
+		$('#adopt-accordion .panel').each(function(i, o){
+			$(o).removeClass("open");
+			$(o).find('.panel-heading .action .cross').removeClass('rotated');
+			});
+		// add open class unless was already open
+		if(!$(this).parent().find('.panel-collapse').hasClass('in')){
+			$(this).parent().addClass('open');
+			$(this).find('.action .cross').addClass('rotated');
+		}
+		scrollToOpenPanel($(this).parent());
 	});
 	
 	simpleCart.bind( 'afterAdd' , function( item ){
-		// $('.menu-basket').removeClass('flash');
-		// setTimeout(function () { 
-		//     $('.menu-basket').addClass('flash');
-		// }, 100);
 		displayBasket();
 	});
 
