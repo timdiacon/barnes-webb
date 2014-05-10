@@ -52,10 +52,11 @@ $(document).ready(function(){
 		    }
 		]
 	});
+
+	/* TODO work out why no worky
 	$('#quote-carousel img').click(function(){
-		console.log('poop');
 		$("#quote-carousel").slickGoTo(1)
-	});
+	});*/
 
 	// init simplecart
 	simpleCart({
@@ -97,7 +98,6 @@ $(document).ready(function(){
 	        forceHeight: false,
 	        smoothScrolling: false
 	    });
-	    // console.log(mySkrollr);
 	}
 
 	// init Fastclick
@@ -315,20 +315,25 @@ function updateCartDisplay(){
 function populateShop(p){
 	var html = '';
 	$(p).each(function(i,k){
-		if(k[3] == 'TRUE'){
-			html += '<div class="simpleCart_shelfItem col-sm-6 col-sm-offset-0 col-md-4">';
-				html += '<a href="javascript:;" class="item_add">';
-					html += '<div class="header">';
-						html += '<img src="'+ k[2] +'" alt="'+ k[0] +'" class="item_thumb">';
-						html += '<div class="over"></div>';
-					html += '</div>';
+		html += '<div class="simpleCart_shelfItem col-sm-6 col-sm-offset-0 col-md-4">';
+			if(k[3] == 'TRUE') html += '<a href="javascript:;" class="item_add">';
+				html += '<div class="header">';
+					html += '<img src="'+ k[2] +'" alt="'+ k[0] +'" class="item_thumb">';
+					if(k[3] == 'TRUE') html += '<div class="over"></div>';
+				html += '</div>';
+				if(k[3] == 'TRUE'){
 					html += '<div class="details">';
 						html += '<span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span>';
-						html += '<div class="add-to-basket">Sold out - available soon</div>';
-					html += '</div>';
-				html += '</a>';
-			html += '</div>';
-		}
+						html += '<div class="add-to-basket">Add to Basket</div>';
+					html += '</div>';	
+				} else {
+					html += '<div class="details out-of-stock">';
+						html += '<div class="item"><span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span></div>';
+						html += '<div class="out-of-stock">Sold Out</div>';
+					html += '</div>';				
+				}
+			if(k[3] == 'TRUE') html += '</a>';
+		html += '</div>';
 	});
 	$('#product-list').html(html);
 

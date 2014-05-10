@@ -914,12 +914,27 @@ nav {
 					opacity: .8;
 				}
 			}
+
 		}
 
 		.details {
+			position: relative;
 			padding: 20px 0;
 			background: $yellow;
 			text-align: center;
+
+
+			
+			&.out-of-stock {
+				background: white;
+				.item {
+					opacity: 0.5;
+				}
+				.out-of-stock {
+					text-transform: uppercase;
+					font-weight: 600;
+				}
+			}
 		}
 	}
 
