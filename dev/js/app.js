@@ -5,6 +5,7 @@ var basketVisible = false;
 var scrollDuration = 1250;
 var anchorPeak = 250;
 var mySkrollr;
+var mySimpleCart;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
 jQuery.easing.def = "easeOutExpo";
 
@@ -59,13 +60,13 @@ $(document).ready(function(){
 	});*/
 
 	// init simplecart
-	simpleCart({
+	mySimpleCart = simpleCart({
 		checkout: { 
 			type: "PayPal" , 
 			email: "paul@barnesandwebb.com" 
 		},
+		shippingFlatRate: 5.5,
 		currency: "GBP",
-		shippingQuantityRate: 1,
 		cartColumns: [
 			{ view: function(item, column){
 				var html = '<div class="row">';
@@ -78,7 +79,6 @@ $(document).ready(function(){
 			}}
 		]
 	});
-	updateCartDisplay();
 	
 	// load the products for the shop
 	$.get( "https://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function(data) {
@@ -141,7 +141,6 @@ function setupMainListeners(){
 		hideBasket();
 	});
 
-
 	$('#empty-basket').click(function(){
 		simpleCart.empty();
 	});
@@ -177,12 +176,9 @@ function setupMainListeners(){
 
 		scrollToOpenPanel($(this).parents(".panel"));
 	});
-	
-	simpleCart.bind( 'afterAdd' , function( item ){
-		// $('.menu-basket').removeClass('flash');
-		// setTimeout(function () { 
-		//     $('.menu-basket').addClass('flash');
-		// }, 100);
+
+	simpleCart.bind('afterAdd', function(item){
+		$('html, body').animate({scrollTop: 0}, scrollDuration);
 		displayBasket();
 	});
 
@@ -193,6 +189,10 @@ function setupMainListeners(){
 	// update the skrollr when accordion opens / closes
 	$('#adopt-accordion').on('hidden.bs.collapse shown.bs.collapse', function () {
 		mySkrollr.refresh($('#men-at-work'));
+	});
+
+	$('#shop-stockist-link').click(function(){
+		$('html, body').animate({scrollTop: $("#stockist-list").offset().top - stickyMenuHeight}, scrollDuration);
 	});
 
 }
@@ -310,30 +310,40 @@ function updateCartDisplay(){
 		$('#basket .summary, #empty-basket, #checkout').removeClass('hidden');
 		$('#basket .empty-message').removeClass('visible');
 	}
+
+	// reset anything above 5 back to 5
+	simpleCart.each(function(cartItem){
+		if(cartItem.quantity() > 5){
+			cartItem.quantity(5);
+		}
+	});
 }
 
 function populateShop(p){
 	var html = '';
 	$(p).each(function(i,k){
-		html += '<div class="simpleCart_shelfItem col-sm-6 col-sm-offset-0 col-md-4">';
-			if(k[3] == 'TRUE') html += '<a href="javascript:;" class="item_add">';
-				html += '<div class="header">';
-					html += '<img src="'+ k[2] +'" alt="'+ k[0] +'" class="item_thumb">';
-					if(k[3] == 'TRUE') html += '<div class="over"></div>';
-				html += '</div>';
-				if(k[3] == 'TRUE'){
-					html += '<div class="details">';
-						html += '<span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span>';
-						html += '<div class="add-to-basket">Add to Basket</div>';
-					html += '</div>';	
-				} else {
-					html += '<div class="details out-of-stock">';
-						html += '<div class="item"><span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span></div>';
-						html += '<div class="out-of-stock">Sold Out</div>';
-					html += '</div>';				
-				}
-			if(k[3] == 'TRUE') html += '</a>';
-		html += '</div>';
+		if(k[4] == 'TRUE'){
+			html += '<div class="simpleCart_shelfItem col-sm-6 col-sm-offset-0 col-md-4">';
+				if(k[3] == 'TRUE') html += '<a href="javascript:;" class="item_add">';
+					//html += '<div class="item_type">jar</div>';
+					html += '<div class="header">';
+						html += '<img src="'+ k[2] +'" alt="'+ k[0] +'" class="item_thumb">';
+						if(k[3] == 'TRUE') html += '<div class="over"></div>';
+					html += '</div>';
+					if(k[3] == 'TRUE'){
+						html += '<div class="details">';
+							html += '<span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span>';
+							html += '<div class="add-to-basket">Add to Basket</div>';
+						html += '</div>';	
+					} else {
+						html += '<div class="details out-of-stock">';
+							html += '<div class="item"><span class="item_name">'+ k[0] +'</span>&nbsp;&#45;&nbsp;<span class="item_price">'+ k[1] +'</span></div>';
+							html += '<div class="out-of-stock">Sold Out</div>';
+						html += '</div>';				
+					}
+				if(k[3] == 'TRUE') html += '</a>';
+			html += '</div>';
+		}
 	});
 	$('#product-list').html(html);
 

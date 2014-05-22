@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 				files:[
 					{expand: true, flatten:true, src: ['dev/index.html'], dest: 'build/', filter: 'isFile'},
 					{expand: true, flatten:true, src: ['dev/img/*.svg'], dest: 'build/img', filter: 'isFile'},
-					{expand: true, flatten:true, src: ['dev/Barnes-and-Webb-Guidebook.pdf'], dest: 'build/', filter: 'isFile'}
+					{expand: true, flatten:true, src: ['dev/*.pdf'], dest: 'build/', filter: 'isFile'}
 				]
 			}
 		}

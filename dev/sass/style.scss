@@ -87,6 +87,9 @@ a:focus {
 
 .footnote-big {
 		font-size: 14px;
+		p {
+			margin-bottom: 15px;
+		}
 }
 
 .footnote {
@@ -247,31 +250,31 @@ header {
 			}
 			
 			#hex-1 {
-				margin-top: 375px;
+				margin-top: 415px;
 				left: 10%;
 				width: 150px;
 			}
 
 			#hex-2 {
-				margin-top: 375px;
-				left: 25%;
-				width: 200px;
+				margin-top: 500px;
+				left: 28%;
+				width: 165px;
 			}
 
 			#hex-3 {
-				margin-top: 475px;
+				margin-top: 520px;
 				left: 40%;
 				width: 120px;
 			}
 
 			#hex-4 {
-				margin-top: 400px;
-				right: 35%;
-				width: 125px;
+				margin-top: 420px;
+				right: 26%;
+				width: 100px;
 			}
 
 			#hex-5 {
-				margin-top: 400px;
+				margin-top: 450px;
 				right: 15%;
 				width: 140px;
 			}
@@ -1040,6 +1043,10 @@ nav {
 
 	.headerRow {
 		display: none;
+	}
+
+	#basket-footer {
+		margin-top: 100px;
 	}
 
 	@media(max-width:$screen-xs-max){
