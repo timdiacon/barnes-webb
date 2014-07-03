@@ -578,8 +578,12 @@ hr {
 	vertical-align: top;
 
 	a {
+		@media(min-width:$screen-sm-min){
+			padding: 10px 9px;
+		}
+
 		@media(min-width:$screen-md-min){
-			padding: 10px 25px;
+			padding: 10px 20px;
 		}
 	}
 }
@@ -626,7 +630,7 @@ nav {
 		}		
 	}
 
-	@media (min-width: $screen-md-min) {
+	@media (min-width: $screen-sm-min) {
 		.logo-container {
 			display: block;
 		}
@@ -635,7 +639,7 @@ nav {
 	.menu-basket {
 		@include transition(color, 0.2s);
 		height: 40px;
-		padding: 8px 0;
+		padding: 5px 0;
 		margin: 5px 0 0 0;
 		cursor: pointer;
 		color: white;
@@ -735,9 +739,16 @@ nav {
 		}
 	}
 	
-	@media (min-width: $screen-md-min){
+	@media (min-width: $screen-sm-min){
 		.logo-container {
 			display: block;
+		}
+	}
+
+	@media(min-width: $screen-sm-min){
+		.menu-basket-container {
+			padding-left: 0px;
+			padding-right: 0px;
 		}
 	}
 
