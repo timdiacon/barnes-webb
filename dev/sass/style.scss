@@ -123,10 +123,21 @@ header {
 
 	.container {
 		padding-top: 300px;
-		.logo {
-			p {
-				margin-top: 10px;
+		
+		#massive-logo {
+			@include translateY(0px);
+			@include transition(opacity 1s ease-out, transform 1s ease-out);
+			&.out {
+				opacity: 0;
+				@include translateY(75px);
+				@include transition(opacity 0s ease-out, transform 0s ease-out);
 			}
+			.logo {
+				p {
+					margin-top: 10px;
+				}
+			}
+			
 		}
 	}
 
@@ -330,6 +341,11 @@ header {
 	#adopt-accordion {
 		margin-top: 0px;
 		.panel {
+			@include transition(background 0.3s ease-out);
+			&:hover {
+				@include transition(background 0s ease-out);
+				background: white;
+			}
 			border: none;
 			margin: 0;
 			background: $midGrey;
@@ -410,22 +426,20 @@ header {
 						margin-top: 50px;
 						padding: 10px 0;
 						background: $yellow;
+						@include transition(background 0.3s ease-out);
+						&:hover {
+							@include transition(background 0s ease-out);
+							background: darken($yellow, 20%);
+						}
 					}
 				}
 
 			}
+			
 			&.open {
 				background: white;
-				
-				.header {
-					background: white;
-				}
-				.plan-body{
-					margin-top:50px;
-					visibility:visible;
-					max-height: 640px;
-				}
 			}
+
 			@media(max-width: $screen-xs-max){
 				.panel-heading {
 					font-size: 16px;
@@ -927,12 +941,11 @@ nav {
 		}
 
 		.details {
+			@include transition(background 0.3s ease-out);
 			position: relative;
 			padding: 20px 0;
 			background: $yellow;
 			text-align: center;
-
-
 			
 			&.out-of-stock {
 				background: white;
@@ -943,6 +956,13 @@ nav {
 					text-transform: uppercase;
 					font-weight: 600;
 				}
+			}
+		}
+
+		&:hover{
+			.details {
+				@include transition(background 0s ease-out);
+				background: darken($yellow, 20%);
 			}
 		}
 	}

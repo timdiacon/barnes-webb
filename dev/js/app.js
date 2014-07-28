@@ -11,6 +11,10 @@ jQuery.easing.def = "easeOutExpo";
 
 $(document).ready(function(){
 	console.log("Release The Bees!");
+
+	setTimeout(function(){
+		$('#massive-logo').removeClass('out');
+	}, 500);
 	
 	// populate the adoption plans using Transparency.js
 	$('#adopt-accordion').render(adoptionPlans, directives);
