@@ -81,9 +81,9 @@ var directives = {
 		html: function(){
 			// indented as per html to make it easier to read
 			// header
-			var s = '<div class="contaner">';
+			var s = '';
 					s += '<div class="header col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xs-12 col-xs-offset-0">';
-						s+= '<div class="row">';
+						s+= '<div class="row" data-toggle="collapse" data-parent="#adopt-accordion" href="#'+ this.item_name +'">';
 							s += '<div class="price col-xs-2 item_price">'+ this.item_price +'</div>';
 							s += '<div class="col-xs-9">';
 								s += '<span class="title item_name">'+ this.item_name +'</span>';
@@ -93,7 +93,7 @@ var directives = {
 						s += '</div>';
 					s += '</div>';
 					// body
-					s += '<div id="'+ this.item_name +'" class="plan-body col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xs-12 col-xs-offset-0">';
+					s += '<div id="'+ this.item_name +'" class="plan-body panel-collapse collapse col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 col-xs-12 col-xs-offset-0">';
 						s += '<div class="row details">';
 							s += '<div class="col-xs-12 col-sm-8">';
 								s += '<div class="title">You will receive:</div>';
@@ -114,7 +114,7 @@ var directives = {
 							s += '</div>';
 						s += '</div>';
 					s += '</div>';
-				s+= '</div>';
+				s+= '';
 			return s;
 		}
 	}
