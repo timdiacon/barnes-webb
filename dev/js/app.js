@@ -55,6 +55,8 @@ $(document).ready(function(){
 		    	}
 		    }
 		]
+	}).on("click", function(){
+		$(this).slickNext();
 	});
 
 	/* TODO work out why no worky
@@ -153,7 +155,7 @@ function setupMainListeners(){
 	});
 
 	$('#find-out-more-btn').click(function(){
-		onMenu('rent', scrollDuration);
+		onMenu('how-it-works', scrollDuration);
 	});
 
 	$('.intro .stockists').click(function(){
@@ -229,6 +231,10 @@ function onMenu(section, duration){
 			if(isShop) hideShop();
 			$('html, body').animate({scrollTop: $("#rent").offset().top - stickyMenuHeight - anchorPeak}, duration);
 			break;
+		case 'how-it-works':
+			if(isShop) hideShop();
+			$('html, body').animate({scrollTop: $("#rent").offset().top - stickyMenuHeight}, duration);
+			break;	
 		case 'adopt':
 			if(isShop) hideShop();
 			$('html, body').animate({scrollTop: $("#adopt").offset().top - stickyMenuHeight - anchorPeak}, duration);
