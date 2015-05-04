@@ -9,6 +9,19 @@ var mySimpleCart;
 stickyThreshold = parseInt($('#intro').css('height'), 10);
 jQuery.easing.def = "easeOutExpo";
 
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
 $(document).ready(function(){
 	console.log("Release The Bees!");
 
@@ -16,6 +29,13 @@ $(document).ready(function(){
 		$('#massive-logo').removeClass('out');
 	}, 500);
 	
+	var query = getUrlVars();
+
+	if(query["page"] !== undefined){
+	
+		onMenu(query["page"], 0);
+	}
+
 	// populate the adoption plans using Transparency.js
 	$('#adopt-accordion').render(adoptionPlans, directives);
 	setupMainListeners();
@@ -86,7 +106,7 @@ $(document).ready(function(){
 	});
 	
 	// load the products for the shop
-	$.get( "https://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function(data) {
+	$.get( "http://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function(data) {
 	  	var a = CSVToArray(data, ',');
 	  	a.splice(0, 1);
 	  	populateShop(a);

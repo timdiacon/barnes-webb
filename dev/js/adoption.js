@@ -1,4 +1,5 @@
-var adoptionDisclaimer = '&#42; Honey is harvested in August and will be delivered as soon as it&#39;s settled, ripened and bottled';
+//var adoptionDisclaimer = '&#42; Honey is harvested in August and will be delivered as soon as it&#39;s settled, ripened and bottled';
+var adoptionDisclaimer = '&#42; All adoption plans run for 1 year\r\n\&#42;&#42; Honey is harvested in August and will be delivered as soon as it&#39;s settled, ripened and bottled.';
 var adoptionPlans = [
 	{
 		item_price:'&pound;25',
@@ -13,7 +14,7 @@ var adoptionPlans = [
 		disclaimer: false
 	},
 	{
-		item_price:'&pound;50',
+		item_price:'&pound;50&#42;',
 		item_name:'Poppy',
 		item_pic:'img/adopt/B&W_adopt_images_poppy.jpg',
 		qty: '5000',
@@ -22,12 +23,12 @@ var adoptionPlans = [
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
-			'A jar of London postcode honey&#42;'
+			'A jar of London postcode honey&#42;&#42;'
 		],
 		disclaimer: true
 	},
 	{
-		item_price:'&pound;85',
+		item_price:'&pound;85&#42;',
 		item_name:'Sunflower',
 		item_pic:'img/adopt/B&W_adopt_images_sunflower.jpg',
 		qty: '10,000',
@@ -37,12 +38,12 @@ var adoptionPlans = [
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A &#8216;Save the Bees&#8217; tote bag',
-			'2 jars of London postcode honey&#42;'
+			'2 jars of London postcode honey&#42;&#42;'
 		],
 		disclaimer: true
 	},
 	{
-		item_price:'&pound;250',
+		item_price:'&pound;250&#42;',
 		item_name:'Cherry',
 		item_pic:'img/adopt/B&W_adopt_images_cherry.jpg',
 		qty: '30,000',
@@ -52,13 +53,13 @@ var adoptionPlans = [
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A &#8216;Save the Bees&#8217; tote bag',
-			'4 jars of London postcode honey&#42;',
+			'4 jars of London postcode honey&#42;&#42;',
 			'Visits to your adopted hive upon arrangement'
 		],
 		disclaimer: true
 	},
 	{
-		item_price:'&pound;500',
+		item_price:'&pound;500&#42;',
 		item_name:'Willow',
 		item_pic:'img/adopt/B&W_adopt_images_willow.jpg',
 		qty: '60,000',
@@ -68,7 +69,7 @@ var adoptionPlans = [
 			'Quarterly email newsletters with updates on your adopted bees',
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A &#8216;Save the Bees&#8217; tote bag',
-			'8 jars of London postcode honey&#42;',
+			'8 jars of London postcode honey&#42;&#42;',
 			'Visits to your adopted hive upon arrangement',
 			'Your name / company name permanently displayed on the hive on a plaque'
 		],
