@@ -11,7 +11,8 @@ var adoptionPlans = [
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
 			'Quarterly email newsletters with updates on your adopted bees'
 		],
-		disclaimer: false
+		disclaimer: false,
+		instock: true
 	},
 	{
 		item_price:'&pound;50&#42;',
@@ -25,7 +26,8 @@ var adoptionPlans = [
 			'A pack of B&amp;W bee-friendly wildflower seeds',
 			'A jar of London postcode honey&#42;&#42;'
 		],
-		disclaimer: true
+		disclaimer: true,
+		instock: true
 	},
 	{
 		item_price:'&pound;85&#42;',
@@ -40,7 +42,8 @@ var adoptionPlans = [
 			'A &#8216;Save the Bees&#8217; tote bag',
 			'2 jars of London postcode honey&#42;&#42;'
 		],
-		disclaimer: true
+		disclaimer: true,
+		instock: true
 	},
 	{
 		item_price:'&pound;250&#42;',
@@ -56,7 +59,8 @@ var adoptionPlans = [
 			'4 jars of London postcode honey&#42;&#42;',
 			'Visits to your adopted hive upon arrangement'
 		],
-		disclaimer: true
+		disclaimer: true,
+		instock: true
 	},
 	{
 		item_price:'&pound;500&#42;',
@@ -73,7 +77,8 @@ var adoptionPlans = [
 			'Visits to your adopted hive upon arrangement',
 			'Your name / company name permanently displayed on the hive on a plaque'
 		],
-		disclaimer: true
+		disclaimer: true,
+		instock: true
 	},
 ]
 
@@ -109,9 +114,16 @@ var directives = {
 						s += '</div>';
 						s += '<div class="row">';
 							s += '<div class="action col-xs-12 col-sm-8 col-sm-offset-2">';
-								s += '<a href="#" class="signup">';
-									s += '<button type="button" class="btn btn-default">Available soon. Sign up below.</button>';
-								s += '</a>';
+								if(this.instock){
+									s += '<a href="javascript:;" class="item_add">';
+										s += 'Add to cart';
+									s += '</a>';
+								}
+								else {
+									s += '<a href="#" class="signup">';
+										s += '<button type="button" class="btn btn-default">Available soon. Sign up below.</button>';
+									s += '</a>';	
+								}
 							s += '</div>';
 						s += '</div>';
 					s += '</div>';
