@@ -75,8 +75,14 @@ $(document).ready(function(){
 		    	}
 		    }
 		]
-	}).on("click", function(){
-		$(this).slickNext();
+	});
+
+	$(".quote-next").on("click", function(){
+		$("#quote-carousel").slickNext();
+	});
+
+	$(".quote-previous").on("click", function(){
+		$("#quote-carousel").slickPrev();
 	});
 
 	/* TODO work out why no worky
@@ -90,7 +96,7 @@ $(document).ready(function(){
 			type: "PayPal" , 
 			email: "paul@barnesandwebb.com" 
 		},
-		shippingFlatRate: 5.5,
+		//shippingFlatRate: 0,
 		currency: "GBP",
 		cartColumns: [
 			{ view: function(item, column){
@@ -105,6 +111,21 @@ $(document).ready(function(){
 		]
 	});
 	
+	simpleCart.shipping(function(){
+		var cost = 5.5;
+		
+		simpleCart.each( function( item ){
+     	
+     		if( item.get('shipping')){
+				cost = 0;
+	     	}
+	     	
+ 		});
+
+ 		return cost;
+	});
+
+
 	// load the products for the shop
 	$.get( "http://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function(data) {
 	  	var a = CSVToArray(data, ',');

@@ -6,6 +6,7 @@ var adoptionPlans = [
 		item_name:'Thyme',
 		item_pic:'img/adopt/B&W_adopt_images_thyme.jpg',
 		qty: '1000',
+		shipping: 0,
 		contents: [
 			'A personalised certificate',
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
@@ -19,6 +20,7 @@ var adoptionPlans = [
 		item_name:'Poppy',
 		item_pic:'img/adopt/B&W_adopt_images_poppy.jpg',
 		qty: '5000',
+		shipping: 0,
 		contents: [
 			'A personalised certificate',
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
@@ -34,6 +36,7 @@ var adoptionPlans = [
 		item_name:'Sunflower',
 		item_pic:'img/adopt/B&W_adopt_images_sunflower.jpg',
 		qty: '10,000',
+		shipping: 0,
 		contents: [
 			'A personalised certificate',
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
@@ -50,6 +53,7 @@ var adoptionPlans = [
 		item_name:'Cherry',
 		item_pic:'img/adopt/B&W_adopt_images_cherry.jpg',
 		qty: '30,000',
+		shipping: 0,
 		contents: [
 			'A personalised certificate',
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
@@ -67,6 +71,7 @@ var adoptionPlans = [
 		item_name:'Willow',
 		item_pic:'img/adopt/B&W_adopt_images_willow.jpg',
 		qty: '60,000',
+		shipping: 0,
 		contents: [
 			'A personalised certificate',
 			'A pack of &#8216;Save the Bees&#8217; badges &amp; stickers',
@@ -94,6 +99,7 @@ var directives = {
 							s += '<div class="col-xs-9">';
 								s += '<span class="title item_name">'+ this.item_name +'</span>';
 								s += '<span class="details">('+ this.qty +' Bees)</span>';
+								s += '<span class="item_shipping" style="display: none;">0</span>';
 							s += '</div>';
 							s += '<div class="action col-xs-1"><div class="cross"></div></div>';
 						s += '</div>';
@@ -115,8 +121,8 @@ var directives = {
 						s += '<div class="row">';
 							s += '<div class="action col-xs-12 col-sm-8 col-sm-offset-2">';
 								if(this.instock){
-									s += '<a href="javascript:;" class="item_add">';
-										s += 'Add to cart';
+									s += '<a href="javascript:;" class="item_add btn btn-default">';
+										s += 'Add to basket';
 									s += '</a>';
 								}
 								else {
