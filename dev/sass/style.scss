@@ -18,6 +18,26 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.terms-container {
+	padding-top: 10px;
+
+	label {
+		font-weight: normal;
+		font-size: 16px;
+
+		&.needs-check {
+			color: #d8b218;
+		}
+	}
+}
+
+#sticky-menu li.active,
+.nav li.active {
+	a {
+		color: #d8b218 !important;
+	}
+}
+
 .container {
 	text-align: center;
 }
@@ -661,7 +681,7 @@ nav {
 		text-decoration: none;
 		@include transition(color, 0.2s);
 	}
-	a:hover, a:focus {
+	a:hover {
 		color: $yellow;
 	}
 }

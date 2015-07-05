@@ -12,7 +12,7 @@ jQuery.easing.def = "easeOutExpo";
 function getUrlVars()
 {
     var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    var hashes = window.location.href.slice(window.location.href).split('/');
     for(var i = 0; i < hashes.length; i++)
     {
         hash = hashes[i].split('=');
@@ -31,10 +31,35 @@ $(document).ready(function(){
 	
 	var query = getUrlVars();
 
-	if(query["page"] !== undefined){
 	
-		onMenu(query["page"], 0);
+
+	var page = (query[3] !== "dev") ? query[3] : query[4];
+
+	if(page.indexOf("#") > -1){
+		page = page.replace("#", "");
 	}
+	console.log(page);
+
+	if(page !== ""){
+	
+		onMenu(page, 0);
+	}
+
+
+	$("#checkout").on("click", function(e){
+		
+		if(!$("#termsbox").is(':checked')){
+			$(".terms-container label").addClass("needs-check");
+		
+			return false;
+		}
+	});
+
+	$(".terms-container input, .terms-container label").on("click", function(){
+		if($("#termsbox").is(':checked')){
+			$(".terms-container label").removeClass("needs-check");
+		}
+	});
 
 	// populate the adoption plans using Transparency.js
 	$('#adopt-accordion').render(adoptionPlans, directives);
@@ -264,6 +289,55 @@ function validate(email){
 	var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(email);
 }
+
+$('#rent').on('inview', function(event, isInView) {
+	console.log("rent");
+  $(".nav li").removeClass("active")
+  
+  if (isInView) {
+    $(".nav li.rent").addClass("active");
+  } else {
+  	if(isShop || basketVisible) {
+  		$(".nav li.shop").addClass("active");	
+  	}
+  }
+});
+
+$('#adopt').on('inview', function(event, isInView) {
+  $(".nav li").removeClass("active")
+  
+  if (isInView) {
+    $(".nav li.adopt").addClass("active");
+  } else {
+  	if(isShop || basketVisible) {
+  		$(".nav li.shop").addClass("active");	
+  	}
+  }
+});
+
+$('#about-us').on('inview', function(event, isInView) {
+  $(".nav li").removeClass("active")
+  
+  if (isInView) {
+    $(".nav li.about").addClass("active");
+  } else {
+  	if(isShop || basketVisible) {
+  		$(".nav li.shop").addClass("active");	
+  	}
+  }
+});
+
+$('#contact').on('inview', function(event, isInView) {
+  $(".nav li").removeClass("active")
+  
+  if (isInView) {
+    $(".nav li.contact").addClass("active");
+  } else {
+  	if(isShop || basketVisible) {
+  		$(".nav li.shop").addClass("active");	
+  	}
+  }
+});
 
 function onMenu(section, duration){
 	// TODO would be better to jump to scroll pos if shop rather than animate

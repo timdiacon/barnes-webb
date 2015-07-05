@@ -80,7 +80,7 @@ var adoptionPlans = [
 			'A &#8216;Save the Bees&#8217; tote bag',
 			'8 jars of London postcode honey&#42;&#42;',
 			'Visits to your adopted hive upon arrangement',
-			'Your name / company name permanently displayed on the hive on a plaque'
+			'Your name / company name displayed on the hive on a plaque'
 		],
 		disclaimer: true,
 		instock: true
