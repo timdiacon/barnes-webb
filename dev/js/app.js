@@ -121,7 +121,7 @@ $(document).ready(function(){
 			type: "PayPal" , 
 			email: "paul@barnesandwebb.com" 
 		},
-		//shippingFlatRate: 0,
+		shippingFlatRate: 0,
 		currency: "GBP",
 		cartColumns: [
 			{ view: function(item, column){
@@ -137,7 +137,8 @@ $(document).ready(function(){
 	});
 	
 	simpleCart.shipping(function(){
-		var cost = 5.5;
+		//var cost = 5.5;
+		var cost = 0;
 		
 		simpleCart.each( function( item ){
      	
@@ -296,45 +297,53 @@ $('#rent').on('inview', function(event, isInView) {
   
   if (isInView) {
     $(".nav li.rent").addClass("active");
+    window.history.replaceState('Object', 'Rent', '/rent');
   } else {
   	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");	
+  		$(".nav li.shop").addClass("active");
+  		window.history.replaceState('Object', 'Shop', '/shop');
   	}
   }
 });
 
 $('#adopt').on('inview', function(event, isInView) {
-  $(".nav li").removeClass("active")
+  $(".nav li").removeClass("active");
   
   if (isInView) {
     $(".nav li.adopt").addClass("active");
+    window.history.replaceState('Object', 'Adopt', '/adopt');
   } else {
   	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");	
+  		$(".nav li.shop").addClass("active");
+  		window.history.replaceState('Object', 'Shop', '/shop');
   	}
   }
 });
 
 $('#about-us').on('inview', function(event, isInView) {
-  $(".nav li").removeClass("active")
+  $(".nav li").removeClass("active");
   
   if (isInView) {
     $(".nav li.about").addClass("active");
+    window.history.replaceState('Object', 'About Us', '/about-us');
   } else {
   	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");	
+  		$(".nav li.shop").addClass("active");
+  		window.history.replaceState('Object', 'Shop', '/shop');
   	}
   }
 });
 
 $('#contact').on('inview', function(event, isInView) {
-  $(".nav li").removeClass("active")
+  $(".nav li").removeClass("active");
   
   if (isInView) {
     $(".nav li.contact").addClass("active");
+    window.history.replaceState('Object', 'Contact', '/contact');
   } else {
   	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");	
+  		$(".nav li.shop").addClass("active");
+  		window.history.replaceState('Object', 'Shop', '/shop');
   	}
   }
 });
@@ -475,6 +484,7 @@ function populateShop(p){
 	$('#shop .simpleCart_shelfItem .header .over').mouseout(function(){
 		$(this).removeClass('hover');
 	});
+
 }
 
 // Thank you Mr Mulhoony-pants
