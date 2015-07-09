@@ -93,19 +93,18 @@ a {
   color: $darkGrey;
   text-decoration: underline;
 }
-a:hover,
-a:focus {
+a:hover {
   color: $darkGrey;
   text-decoration: underline;
   &.page-link {
   	color: white;
   }
 }
-a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
+// a:focus {
+//   outline: thin dotted;
+//   outline: 5px auto -webkit-focus-ring-color;
+//   outline-offset: -2px;
+// }
 
 .footnote-big {
 	font-size: 14px;
@@ -618,13 +617,6 @@ header {
 	background: $yellow;
 }
 
-#about-us {
-	background: white;
-	a {
-		color: $darkGrey;
-	}
-}
-
 .box-btn {
 	padding: 10px 20px;
 	margin: 10px 0;
@@ -782,7 +774,7 @@ nav {
 		text-decoration: none;
 		line-height: 30px;
 	}
-	a:hover, a:focus {
+	a:hover {
 		color: $mustard;
 	}
 	.menu-basket {
@@ -1245,6 +1237,23 @@ nav {
 		background-color: rgba($yellow, 0);
 	}	
 }
+
+#about-us {
+	background: white;
+	
+	&.detail-block {
+		padding-top: 0 !important;
+	}
+	
+	.container {
+		margin-top: 30px !important;
+	}
+	
+	a {
+		color: $darkGrey;
+	}
+}
+
 
 /***** SLICK  *****/
 

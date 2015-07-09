@@ -31,17 +31,16 @@ $(document).ready(function(){
 	
 	var query = getUrlVars();
 
-	
-
 	var page = (query[3] !== "dev") ? query[3] : query[4];
 
 	if(page.indexOf("#") > -1){
 		page = page.replace("#", "");
 	}
-	console.log(page);
-
-	if(page !== ""){
 	
+	if(page !== ""){
+		if(page === "about"){
+			page === "about-us";
+		}
 		onMenu(page, 0);
 	}
 
@@ -185,6 +184,9 @@ function setupMainListeners(){
 		var id = $(this).attr('class');
 		onMenu(id, (isShop) ? 0 : scrollDuration);
 
+		$(".navbar li").removeClass("active");
+		$(this).addClass("active");
+
 		if($('.navbar-header').css('display') != 'none'){
 			$(".navbar-header .navbar-toggle").click();
 		}
@@ -291,64 +293,37 @@ function validate(email){
 	return re.test(email);
 }
 
-$('#rent').on('inview', function(event, isInView) {
-	console.log("rent");
-  $(".nav li").removeClass("active")
+$('.detail-block').waypoint(function() {
   
-  if (isInView) {
-    $(".nav li.rent").addClass("active");
-    window.history.replaceState('Object', 'Rent', '/rent');
-  } else {
-  	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");
-  		window.history.replaceState('Object', 'Shop', '/shop');
-  	}
-  }
-});
+	switch(this.element.id){
+		case "about-us" :
+			$(".nav li").removeClass("active");
+			$(".nav li.about").addClass("active");
+			window.history.replaceState('Object', 'About Us', '/about');
+		break;
+		case "adopt" :
+			$(".nav li").removeClass("active");
+			$(".nav li.adopt").addClass("active");
+			window.history.replaceState('Object', 'Adopt', '/adopt');
+		break;
+		case "contact" :
+			$(".nav li").removeClass("active");
+			$(".nav li.contact").addClass("active");
+			window.history.replaceState('Object', 'Contact', '/contact');
+		break;
+		case "rent" :
+			$(".nav li").removeClass("active");
+			$(".nav li.rent").addClass("active");
+			window.history.replaceState('Object', 'Rent', '/rent');
+		break;
+	}	
 
-$('#adopt').on('inview', function(event, isInView) {
-  $(".nav li").removeClass("active");
-  
-  if (isInView) {
-    $(".nav li.adopt").addClass("active");
-    window.history.replaceState('Object', 'Adopt', '/adopt');
-  } else {
-  	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");
-  		window.history.replaceState('Object', 'Shop', '/shop');
-  	}
-  }
-});
-
-$('#about-us').on('inview', function(event, isInView) {
-  $(".nav li").removeClass("active");
-  
-  if (isInView) {
-    $(".nav li.about").addClass("active");
-    window.history.replaceState('Object', 'About Us', '/about-us');
-  } else {
-  	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");
-  		window.history.replaceState('Object', 'Shop', '/shop');
-  	}
-  }
-});
-
-$('#contact').on('inview', function(event, isInView) {
-  $(".nav li").removeClass("active");
-  
-  if (isInView) {
-    $(".nav li.contact").addClass("active");
-    window.history.replaceState('Object', 'Contact', '/contact');
-  } else {
-  	if(isShop || basketVisible) {
-  		$(".nav li.shop").addClass("active");
-  		window.history.replaceState('Object', 'Shop', '/shop');
-  	}
-  }
+}, {
+  offset: '15%'
 });
 
 function onMenu(section, duration){
+	
 	// TODO would be better to jump to scroll pos if shop rather than animate
 	switch(section){
 		case 'rent':
@@ -403,6 +378,12 @@ function displayShop(){
 	isShop = true;
 	updateSticky();
 	$('html, body').scrollTop(0);
+
+	setTimeout(function(){
+		$(".nav li").removeClass("active");
+		$(".nav li.shop").addClass("active");
+		window.history.replaceState('Object', 'Shop', '/shop');
+	}, 100);
 }
 
 function hideShop(){
@@ -421,7 +402,13 @@ function displayBasket(){
 	}
 	$('#basket').addClass('visible');
 	$('#products, #basket-container').css('display', 'none');
-	basketVisible = true;	
+	basketVisible = true;
+
+	setTimeout(function(){
+		$(".nav li").removeClass("active");
+		$(".nav li.shop").addClass("active");
+		window.history.replaceState('Object', 'Shop', '/shop');
+	}, 100);
 }
 
 function hideBasket(){

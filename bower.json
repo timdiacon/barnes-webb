@@ -18,6 +18,7 @@
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.1",
     "skrollr": "~0.6.21",
+    "waypoints": "3.1.1",
     "simplecart-js": "*",
     "transparency": "~0.9.14",
     "slick-carousel": "~1.3.3",
