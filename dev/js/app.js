@@ -152,15 +152,19 @@ $(document).ready(function(){
 
 
 	// load the products for the shop
-	$.get( "http://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function(data) {
-	  	var a = CSVToArray(data, ',');
-	  	a.splice(0, 1);
-	  	populateShop(a);
-	}).fail(function() {
-		// something went wrong with Google Spreadsheet display error message
-		$('#shop .error-msg').removeClass('hidden');
-		$('#shop #products').addClass('hidden');
-	})
+	// $.get( "http://docs.google.com/spreadsheet/pub?key=0Ane4qhAooN5zdC02cF9mVnZTOEpFRWVXR0RzNFJSdHc&output=csv", function(data) {
+	//   	var a = CSVToArray(data, ',');
+	//   	a.splice(0, 1);
+
+	//   	console.log(JSON.stringify(a));
+	
+	populateShop(shopData);
+	
+	// }).fail(function() {
+	// 	// something went wrong with Google Spreadsheet display error message
+	// 	$('#shop .error-msg').removeClass('hidden');
+	// 	$('#shop #products').addClass('hidden');
+	// })
 
 	// init the crazy parallax shit if we're not on mobile
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){

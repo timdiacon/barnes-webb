@@ -21,6 +21,10 @@ body {
 .terms-container {
 	padding-top: 10px;
 
+	input[type=checkbox] {
+		margin-right: 10px;
+	}
+
 	label {
 		font-weight: normal;
 		font-size: 16px;
